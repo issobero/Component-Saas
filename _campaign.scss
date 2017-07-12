@@ -1,0 +1,31 @@
+@charset "UTF-8";
+@import "compass";
+// =====================================================
+/* - - campaign - - */
+#campaign .wrapper01 {
+  @include display-flex;
+  @include flex-direction(row);
+  @include flex-wrap(wrap);
+  @include justify-content(space-between);
+  @media (max-width: 599px) {
+    @include flex-direction(column);
+    @include align-content(space-between);
+  }
+
+  div {
+    width: calc(50%-10px);
+    padding:5px 0;
+    @include flex-grow(1);
+    @include flex-shrink(1);
+    @media (max-width: 599px) {
+      width:calc(100% - 10px);
+      padding:5px 0;
+    }
+  }
+  img {
+    max-width:467px;
+    max-height:94px;
+    width: 100%;
+    height:auto;
+  }
+}

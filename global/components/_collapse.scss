@@ -1,0 +1,364 @@
+@charset "UTF-8";
+/* collapses */
+.collapses {
+	margin: 10px 0; // $spacement-lg;
+	position: relative;
+	clear: both;
+  background: #f2f3f8;
+  .collapsed-inner {
+    padding: 10px;
+  }
+	> {
+    p {
+      padding: 20px;
+    }
+		input {
+			cursor: pointer;
+			filter: alpha(opacity = 0);
+			height: 45px;
+			margin: 0;
+			opacity: 0;
+			position: absolute;
+			width: 100%;
+			z-index: 2;
+		}
+		label {
+			@include transition (all .15s ease-out);
+			background: #004386;
+			border-#{$left}: 3px solid #004386;
+			border-radius: 5px;
+			color: #fff;
+			display: block;
+			font-size: 1.1em;
+			min-height: 20px;
+			padding: side-values(12px 20px 12px 10px);
+			position: relative;
+			cursor: pointer;
+			font-weight: 400;
+      margin-bottom: 0;
+			&:-moz-selection {
+				background: none;
+			}
+			i {
+				&.fa-minus {
+					display: inline;
+				}
+				&.fa-plus {
+					display: none;
+				}
+			}
+			&:selection {
+				background: none;
+			}
+			&:before {
+				border: 6px solid transparent;
+				border-top-color: #FFF;
+				content: '';
+				margin-top: -3px;
+				position: absolute;
+				#{$right}: 10px;
+				top: 50%;
+			}
+			&:hover {
+				background: #004386;
+				color: #fff;
+				border-color: #004386;
+			}
+			+ p {
+				color: #999;
+				display: block;
+				overflow: hidden;
+				padding-#{$left}: 30px;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				height: 25px;
+			}
+			i {
+				font-size: 0.7em;
+				margin-#{$right}: 8px;
+				position: relative;
+				top: -1px;
+			}
+		}
+	}
+	.collapsed {
+		color: #004386;
+		background: #f2f3f8;
+		border-color: #004386;
+		&:before {
+			border: 6px solid transparent;
+			border-#{$left}-color: inherit;
+			content: '';
+			margin-top: -6px;
+			position: absolute;
+			#{$right}: 4px;
+			top: 50%;
+		}
+		i {
+			&.fa-minus {
+				display: none;
+			}
+			&.fa-plus {
+				display: inline;
+			}
+		}
+	}
+	> p.preview-active {
+		height: auto;
+		white-space: normal;
+	}
+
+	&.collapses-sm {
+		.collapses {
+			> label {
+				font-size: 0.9em;
+				padding: 6px 20px 6px 10px;
+			}
+			> .collapses-content > p {
+				font-size: 0.9em;
+			}
+		}
+	}
+
+	&.collapses-lg {
+		.collapses {
+			> label {
+				font-size: 1.1em;
+				padding: 16px 20px 16px 20px;
+			}
+			> .collapses-content > p {
+				font-size: 1.1em;
+			}
+		}
+	}
+
+	&.collapses-simple {
+		.collapses {
+			> label {
+				border-radius: 0;
+				border: 0;
+				background: transparent;
+				color: $color-font-default;
+				padding-#{$left}: 32px;
+				margin-bottom: -10px;
+				font-size: 1em;
+				font-weight: 600;
+				color: $color-dark;
+				&:after {
+					content: '';
+					position: absolute;
+					#{$left}: 0;
+					display: block;
+					width: 24px;
+					height: 24px;
+					background: #CCC;
+					top: 23px;
+					margin-top: -12px;
+					border-radius: 3px;
+					z-index: 1;
+				}
+				&:before {
+					border: 0;
+					#{$left}: 7px;
+					#{$right}: auto;
+					margin-top: 0;
+					top: 12px;
+					font-family: FontAwesome;
+					content: "\f067";
+					z-index: 2;
+					color: #FFF;
+					font-size: 13px;
+				}
+			}
+			&.active > label {
+				background: transparent;
+				color: $color-dark;
+				&:before {
+					content: "\f068";
+				}
+			}
+		}
+	}
+}
+
+/* collapses-red */
+.collapses-red {
+  margin: 10px 0; // $spacement-lg;
+  position: relative;
+  clear: both;
+  background: #F9E2DA;
+  .collapsed-red-inner {
+    padding: 10px;
+  }
+  > {
+    p {
+      padding: 20px;
+    }
+    input {
+      cursor: pointer;
+      filter: alpha(opacity = 0);
+      height: 45px;
+      margin: 0;
+      opacity: 0;
+      position: absolute;
+      width: 100%;
+      z-index: 2;
+    }
+    label {
+      @include transition (all .15s ease-out);
+      background: #93170F;
+      border-#{$left}: 3px solid #93170F;
+      border-radius: 5px;
+      color: #fff;
+      display: block;
+      font-size: 1.1em;
+      min-height: 20px;
+      padding: side-values(12px 20px 12px 10px);
+      position: relative;
+      cursor: pointer;
+      font-weight: 400;
+      margin-bottom: 0;
+      &:-moz-selection {
+        background: none;
+      }
+      i {
+        &.fa-minus {
+          display: inline;
+        }
+        &.fa-plus {
+          display: none;
+        }
+      }
+      &:selection {
+        background: none;
+      }
+      &:before {
+        border: 6px solid transparent;
+        border-top-color: #FFF;
+        content: '';
+        margin-top: -3px;
+        position: absolute;
+        #{$right}: 10px;
+        top: 50%;
+      }
+      &:hover {
+        background: #93170F;
+        color: #fff;
+        border-color: #93170F;
+      }
+      + p {
+        color: #999;
+        display: block;
+        overflow: hidden;
+        padding-#{$left}: 30px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        height: 25px;
+      }
+      i {
+        font-size: 0.7em;
+        margin-#{$right}: 8px;
+        position: relative;
+        top: -1px;
+      }
+    }
+  }
+  .collapsed {
+    color: #93170F;
+    background: #F9E2DA;
+    border-color: #93170F;
+    &:before {
+      border: 6px solid transparent;
+      border-#{$left}-color: inherit;
+      content: '';
+      margin-top: -6px;
+      position: absolute;
+      #{$right}: 4px;
+      top: 50%;
+    }
+    i {
+      &.fa-minus {
+        display: none;
+      }
+      &.fa-plus {
+        display: inline;
+      }
+    }
+  }
+  > p.preview-active {
+    height: auto;
+    white-space: normal;
+  }
+
+  &.collapses-sm {
+    .collapses {
+      > label {
+        font-size: 0.9em;
+        padding: 6px 20px 6px 10px;
+      }
+      > .collapses-content > p {
+        font-size: 0.9em;
+      }
+    }
+  }
+
+  &.collapses-lg {
+    .collapses {
+      > label {
+        font-size: 1.1em;
+        padding: 16px 20px 16px 20px;
+      }
+      > .collapses-content > p {
+        font-size: 1.1em;
+      }
+    }
+  }
+
+  &.collapses-simple {
+    .collapses {
+      > label {
+        border-radius: 0;
+        border: 0;
+        background: transparent;
+        color: $color-font-default;
+        padding-#{$left}: 32px;
+        margin-bottom: -10px;
+        font-size: 1em;
+        font-weight: 600;
+        color: $color-dark;
+        &:after {
+          content: '';
+          position: absolute;
+          #{$left}: 0;
+          display: block;
+          width: 24px;
+          height: 24px;
+          background: #CCC;
+          top: 23px;
+          margin-top: -12px;
+          border-radius: 3px;
+          z-index: 1;
+        }
+        &:before {
+          border: 0;
+          #{$left}: 7px;
+          #{$right}: auto;
+          margin-top: 0;
+          top: 12px;
+          font-family: FontAwesome;
+          content: "\f067";
+          z-index: 2;
+          color: #FFF;
+          font-size: 13px;
+        }
+      }
+      &.active > label {
+        background: transparent;
+        color: $color-dark;
+        &:before {
+          content: "\f068";
+        }
+      }
+    }
+  }
+}

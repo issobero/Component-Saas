@@ -1,0 +1,180 @@
+@charset "UTF-8";
+//*************************************************************
+// NTT Communications furusatomarche
+// 基本 !important で作成する。
+//*************************************************************/
+
+$color-custom: true; // custom flag
+
+/* ncom color */
+// Default OCN Main Color => #e41f31
+// Custom Ncom bg-Color => #f2f3f8
+// Custom OCN Main Color => #93170F
+// Custom OCN bg-color => #F9E2DA
+
+$color-ocn: #e41f31;
+
+$color-ncom: #004386;
+$color-ocn-2: #93170F;
+$bg-ncom: #e5eff9;
+$bg-ncom-1: #f2f3f8;
+
+
+/* color定義 */
+$color-gray: #5D5D5D;
+$color-gray-1: #DDDDDD;
+
+$color-red: #e41f31;
+$color-red-1: #EF6A68;
+$color-red-2: #ECAEAE;
+$color-blue: #3879ef;
+//$color-blue: #0325FC;
+$color-blue-1: #4F66FC;
+$color-blue-2: #99C2FF;
+$color-yellow: #FCC203;
+$color-yellow-1: #FCD44F;
+$color-green: #34CA75 ;
+$color-green-1: #76D39E;
+$color-pink: #F003FC;
+$color-pink-1: #F44FFC;
+$color-orange: #F14F15;
+$color-orange-1: #F3865E;
+
+/* anchor color */
+$color-anchor: $color-blue; // 元々 #0066ff
+$color-anchor-hover: $color-red;
+
+/* Ncom-Color */
+.bg-ncom { background-color: $bg-ncom; color: $color-ncom}
+.bg-ncom-1 { background-color: $bg-ncom-1}
+.f-ncom { color: $color-ncom;}
+
+/* color red */
+.f-red   { color: $color-red !important; }
+.f-red-1 { color: $color-red-1 !important; }
+.f-red-2 { color: $color-red-2 !important; }
+
+/* background */
+.bg-red { background-color: $color-red !important; }
+.bg-red-1 { background-color: $color-red-1 !important; }
+.bg-red-2 { background-color: $color-red-2 !important; }
+
+/* color blue */
+.f-blue   { color: $color-blue !important; }
+.f-blue-1   { color: $color-blue-1 !important; }
+.f-blue-2   { color: $color-blue-2 !important; }
+
+/* background */
+.bg-blue { background-color: $color-blue !important; }
+.bg-blue-1 { background-color: $color-blue-1 !important; }
+.bg-blue-2 { background-color: $color-blue-2 !important; }
+
+/* color yellow */
+.f-yellow { color: $color-yellow !important; }
+.f-yellow-1 { color: $color-yellow-1 !important; }
+
+/* background */
+.bg-yellow { background-color: $color-yellow !important; }
+.bg-yellow-1 { background-color: $color-yellow-1 !important; }
+
+/* color green */
+.f-green { color: $color-green !important; }
+.f-green-1 { color: $color-green-1 !important; }
+
+/* background */
+.bg-green { background-color: $color-green !important; }
+.bg-green-1 { background-color: $color-green-1 !important; }
+
+/* color pink */
+.f-pink { color: $color-pink !important; }
+.f-pink-1 { color: $color-pink-1 !important; }
+
+/* background */
+.bg-pink { background-color: $color-pink !important; }
+.bg-pink-1 { background-color: $color-pink-1 !important; }
+
+/* color orange */
+.f-orange { color: $color-orange !important; }
+.f-orange-1 { color: $color-orange-1 !important; }
+
+/* background */
+.bg-orange { background-color: $color-orange !important; }
+.bg-orange-1 { background-color: $color-orange-1 !important; }
+
+/* color pink */
+.f-gray { color: $color-gray !important; }
+.f-gray-1 { color: $color-gray-1 !important; }
+
+/* グレー */
+.bg-gray { background-color: $color-gray !important; }
+.bg-gray-1 { background-color: $color-gray-1 !important; }
+
+/* 背景グラデーション（red） */
+.bg-gra-l-red { background: rgba(0, 0, 0, 0) radial-gradient(circle farthest-side, $color-red-1, #FFF 100%, $color-red-1 75%, #FFF)repeat scroll 0 0 / 4px 4px; }
+.bg-gra-l-blue { background: rgba(0, 0, 0, 0) radial-gradient(circle farthest-side, $color-blue-1, #FFF 100%, $color-blue-1 75%, #FFF)repeat scroll 0 0 / 4px 4px; }
+.bg-gra-l-yellow { background: rgba(0, 0, 0, 0) radial-gradient(circle farthest-side, $color-yellow-1, #FFF 100%, $color-yellow-1 75%, #FFF)repeat scroll 0 0 / 4px 4px; }
+.bg-gra-l-green { background: rgba(0, 0, 0, 0) radial-gradient(circle farthest-side, $color-green-1, #FFF 100%, $color-green-1 75%, #FFF)repeat scroll 0 0 / 4px 4px; }
+.bg-gra-l-pink { background: rgba(0, 0, 0, 0) radial-gradient(circle farthest-side, $color-pink-1, #FFF 100%, $color-pink-1 75%, #FFF)repeat scroll 0 0 / 4px 4px; }
+.bg-gra-l-orange { background: rgba(0, 0, 0, 0) radial-gradient(circle farthest-side, $color-orange-1, #FFF 100%, $color-orange-1 75%, #FFF)repeat scroll 0 0 / 4px 4px; }
+
+.bg-gra-l-gray { background: rgba(0, 0, 0, 0) radial-gradient(circle farthest-side, $color-gray-1, #FFF 100%, $color-gray-1 75%, #FFF)repeat scroll 0 0 / 4px 4px; }
+
+// NTT communications ALL company back image
+.bg-ncom-company-image {
+  background-image: image-url("common/bg/bg-l-services-detail.jpg");
+  background-size: 100% auto;
+}
+
+/************************************************************
+ * アンカータグ
+ ************************************************************/
+a { color: $color-ncom; }
+a:hover { color: $color-ncom; } /* TODO 仮 */
+
+/************************************************************
+ * Typography
+ ************************************************************/
+/* h1 h2 h3 border */
+
+.brb-ncom {
+  border-bottom: 1px solid $color-ncom;
+  padding-bottom: 10px;
+}
+
+.info-brl-ncom {
+  border-left: 3px solid $color-ncom;
+  padding-left: 10px;
+}
+
+
+/************************************************************
+ * labels
+ ************************************************************/
+
+.btn {
+  // border-radius: 0 !important;
+}
+
+/************************************************************
+ * box
+ ************************************************************/
+.ncom-box {
+  padding: 10px 20px 10px 20px !important;
+  background-color: $bg-ncom !important;
+}
+
+/* ribbon */
+.mt-element-ribbon .ribbon {
+  margin: 0 0 10px 0 !important;
+}
+
+.mt-element-ribbon .ribbon.ribbon-clip {
+  left: -30px !important;
+  margin-left: 0;
+}
+
+.mt-element-ribbon .ribbon.ribbon-clip.ribbon-right {
+  left: auto;
+  right: -30px !important;
+  margin-right: 0;
+}

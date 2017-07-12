@@ -1,0 +1,137 @@
+@charset "UTF-8";
+/*******************************************
+* color定義 Default color はトーン-1までの指定
+ *******************************************/
+
+@if $color-custom == true {
+}
+@else
+{
+  $color-gray: #8b91a0;
+  $color-red: #f35958;
+  $color-red-1: #F5A3A2;
+  $color-blue: #37b0e9;
+  $color-blue-1: #7FCAED;
+  $color-yellow: #f7cf5e;
+  $color-yellow-1: #F8E4A9;
+  $color-green: #34CA75;
+  $color-green-1: #76D39E;
+  /* アンカータグ */
+  $color-anchor: #004386;
+  $color-anchor-hover: #004386;
+}
+
+$color-dark: #1d2127;
+$color-dark-inverse: #FFF;
+$color-dark-1: lighten($color-dark, 2%);
+$color-dark-2: lighten($color-dark, 5%);
+$color-dark-3: lighten($color-dark, 8%);
+$color-dark-4: lighten($color-dark, 10%);
+$color-dark-5: lighten($color-dark, 3%);
+$color-darken-1: darken($color-dark, 2%);
+
+$color-white: #FFFFFF !default;
+$color-black: #000000 !default;
+$color-black-1: #111111 !default;
+$color-black-2: #222222 !default;
+$color-black-3: #333333 !default;
+$color-black-4: #444444 !default;
+$color-black-5: #555555 !default;
+
+$color-gray-1: #d6d6d6;
+$color-gray-2: #eeeeee;
+$color-gray-3: #f6f6f6;
+$color-gray-body: #f7fafa;
+
+$color-emerald: #00bc9a;
+$color-emerald-1: #3CC7AE;
+$color-purple: #6d5eac;
+$color-purple-1: #A39DBA;
+$color-aqua: #5ba5d6;
+$color-aqua-1: #A0C5DD;
+
+$color-primary: #0088cc;
+$color-danger: #d2322d;
+$color-waning: #ed9c28;
+
+$color-com: #004386;
+
+$color-pink: #e92f76;
+$color-blue-ws: #000154;
+
+
+//Component colors
+$theme-type: default;
+$component-colors: (
+    "white":	(base:#ffffff, font: #666),
+    "default":	(base:#e1e5ec, font: #666),
+    "dark":	(base:#2f353b, font: #FFFFFF),
+
+    "blue":	(base:#3598dc, font: #FFFFFF),
+    "blue-madison":	(base:#578ebe, font: #FFFFFF),
+    "blue-chambray":	(base:#2C3E50, font: #FFFFFF),
+    "blue-ebonyclay":	(base:#22313F, font: #FFFFFF),
+    "blue-hoki":	(base:#67809F, font: #FFFFFF),
+    "blue-steel":	(base:#4B77BE, font: #FFFFFF),
+    "blue-soft":	(base:#4c87b9, font: #FFFFFF),
+    "blue-dark":	(base:#5e738b, font: #FFFFFF),
+    "blue-sharp":	(base:#5C9BD1, font: #FFFFFF),
+    "blue-oleo":	(base:#94A0B2, font: #FFFFFF),
+
+    "green":	(base:#32c5d2, font: #FFFFFF),
+    "green-meadow":	(base:#1BBC9B, font: #FFFFFF),
+    "green-seagreen":	(base:#1BA39C, font: #FFFFFF),
+    "green-turquoise":	(base:#36D7B7, font: #FFFFFF),
+    "green-haze":	(base:#44b6ae, font: #FFFFFF),
+    "green-jungle":	(base:#26C281, font: #FFFFFF),
+    "green-soft":	(base:#3faba4, font: #FFFFFF),
+    "green-dark":	(base:#4DB3A2, font: #FFFFFF),
+    "green-sharp":	(base:#2ab4c0, font: #FFFFFF),
+    "green-steel":	(base:#29b4b6, font: #FFFFFF),
+
+    "grey":	(base:#E5E5E5, font: #333333),
+    "grey-steel":	(base:#e9edef, font: #80898e),
+    "grey-cararra":	(base:#fafafa, font: #333333),
+    "grey-gallery":	(base:#555555, font: #ffffff),
+    "grey-cascade":	(base:#95A5A6, font: #FFFFFF),
+    "grey-silver":	(base:#BFBFBF, font: #FAFCFB),
+    "grey-salsa":	(base:#ACB5C3, font: #FAFCFB),
+    "grey-salt":	(base:#bfcad1, font: #FAFCFB),
+    "grey-mint":	(base:#525e64, font: #FFFFFF),
+
+    "red":	(base:#e7505a, font: #ffffff),
+    "red-pink":	(base:#E08283, font: #ffffff),
+    "red-sunglo":	(base:#E26A6A, font: #ffffff),
+    "red-intense":	(base:#e35b5a, font: #ffffff),
+    "red-thunderbird":	(base:#D91E18, font: #ffffff),
+    "red-flamingo":	(base:#EF4836, font: #ffffff),
+    "red-soft":	(base:#d05454, font: #ffffff),
+    "red-haze":	(base:#f36a5a, font: #ffffff),
+    "red-mint":	(base:#e43a45, font: #ffffff),
+
+    "yellow":	(base:#c49f47, font: #ffffff),
+    "yellow-gold":	(base:#E87E04, font: #ffffff),
+    "yellow-casablanca":	(base:#f2784b, font: #ffffff),
+    "yellow-crusta":	(base:#f3c200, font: #ffffff),
+    "yellow-lemon":	(base:#F7CA18, font: #ffffff),
+    "yellow-saffron":	(base:#F4D03F, font: #ffffff),
+    "yellow-soft":	(base:#c8d046, font: #ffffff),
+    "yellow-haze":	(base:#c5bf66, font: #ffffff),
+    "yellow-mint":	(base:#c5b96b, font: #ffffff),
+
+    "purple":	(base:#8E44AD, font: #ffffff),
+    "purple-plum":	(base:#8775a7, font: #ffffff),
+    "purple-medium":	(base:#BF55EC, font: #ffffff),
+    "purple-studio":	(base:#8E44AD, font: #ffffff),
+    "purple-wisteria":	(base:#9B59B6, font: #ffffff),
+    "purple-seance":	(base:#9A12B3, font: #ffffff),
+    "purple-intense":	(base:#8775a7, font: #ffffff),
+    "purple-sharp":	(base:#796799, font: #ffffff),
+    "purple-soft":	(base:#8877a9, font: #ffffff),
+
+    "blue-skippr":  (base: #3879ef,font: #fff),
+    "blue-com":     (base: #004386,font: #fff),
+    "blue-ws": (base: #000154,font: #fff),
+
+    "pink":  (base: #e92f76,font: #fff)
+);

@@ -1,0 +1,34 @@
+@charset "UTF-8";
+@import "compass";
+
+/**************************************************************
+ Response SmartPhone
+**************************************************************/
+@media only screen and (max-width: 767px) {
+
+  .news {
+    border-collapse: collapse;
+    th  {
+      font-size: 12px;
+    }
+    td {
+      font-size: 10px;
+    }
+    .news_date {
+      width:105px;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+/*************************************************************
+CDN CSS Components
+CSS framework ：bootstrap
+
+■grid定義：
+PC(992px以上)         => PC版
+Middle(767px - 992px) => タブレット等
+SmartPhone(767px以下) => スマートフォン全般
+*************************************************************/
+
+/**********************
+* include config CSS
+***********************/
+@import "components/config/color"; /* color */
+@import "components/config/directional"; /* directional */
+@import "components/config/variables"; /* variables */
+
+
+/**********************
+* include Plugin CSS
+***********************/
+@import "components/normalize"; /* css reset */
+@import "components/animete"; /* animation css */
+
+/**********************
+* include Web Component CSS
+***********************/
+@import "components/btn";       /* btn */
+@import "components/lists";     /* lists */
+@import "components/tabs";      /* tabs */
+@import "components/elements";  /* elements */
+@import "components/collapse";   /* toggles */
+@import "components/ribbon";   /* ribbon */
+
+/**********************
+* include Object CSS
+***********************/
+@import "components/typography"; /* font */
+@import "components/oocss"; /* oocss */

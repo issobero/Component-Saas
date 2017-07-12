@@ -1,0 +1,70 @@
+@charset "UTF-8";
+@import "compass";
+
+input.error {
+  position: relative;
+  border: solid 1px #ff0000;
+  @include box-shadow(0 0 5px rgba(255,0,0,0.5));
+  @include border-radius(3px);
+  // @include pie;
+}
+
+.error-msg {
+  color: #ff0000;
+  font-size: 13px;
+
+  position: absolute;
+  top: 45px;
+  left: 15px;
+  z-index: 200;
+
+  // min-width: $baseSize * 4.5;
+  padding: 8px 20px 5px 50px;
+  line-height: 20px;
+  background: #fff;
+  border: solid 1px #ff0000;
+  font-weight: bold;
+  // @include boxSizing;
+  // @include border-radius($baseBorderRadius);
+  @include box-shadow(0 3px 5px 0 rgba(0, 0, 0, 0.3));
+  // @include pie;
+ &:before {
+   border-bottom: 12px solid #ff0000;
+   border-left: 12px solid transparent;
+   border-right: 12px solid transparent;
+   content: "";
+   display: block;
+   height: 0;
+   left: 42px;
+   position: absolute;
+   top: -12px;
+   width: 0;
+   z-index: 212;
+  }
+  &:after {
+    border-bottom: 11px solid #fff;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    content: "";
+    display: block;
+    height: 0;
+    left: 43px;
+    position: absolute;
+    top: -11px;
+    width: 0;
+    z-index: 212;
+  }
+
+  .ico_error {
+    position: absolute;
+    top: 5px;
+    left: 15px;
+  }
+}
+
+.ico_error {
+  display: inline-block;
+  width: image-width('common/icon/error.png');
+  height: image-height('common/icon/error.png');
+  background: image-url('common/icon/error.png') no-repeat;
+}

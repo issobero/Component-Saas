@@ -1,0 +1,162 @@
+@charset "UTF-8";
+
+/************************************************************
+ * 初期化 関連
+ ************************************************************/
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/************************************************************
+ * フォント 関連
+ ************************************************************/
+body, button, input, select, optgroup, textarea {
+  font-family: "メイリオ",Meiryo,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+}
+.fFg { font-family: 'ＭＳ Ｐゴシック', 'MS P Gothic', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'Osaka', arial, sans-serif, verdana, Helvetica; }
+.fFm { font-family: 'メイリオ',Meiryo,'ヒラギノ角ゴ Pro W3','ＭＳ Ｐゴシック',MS PGothic,sans-serif; }
+.fFC { font-family: FrutigerNeueLTW10-Regul,FrutigerNeueW01-Regular,"ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, Helvetica, sans-serif;  }
+
+.font-alternative {
+  font-family: "Shadows Into Light",cursive;
+  font-size: 1.6em;
+}
+
+/************************************************************
+ * hタグ
+ ************************************************************/
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
+}
+
+h3{
+  font-size: 18px;
+  font-weight: bold;
+  }
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
+
+.info-brl-red {
+  border-left: 3px solid $color-red;
+  padding: 10px 0 10px 10px;
+}
+
+.info-brl-blue {
+  border-left: 3px solid $color-blue;
+  padding: 10px 0 10px 10px;
+}
+
+.brb-blue {
+  border-bottom: 1px solid $color-blue;
+  padding: 10px 0 10px 10px;
+}
+
+/* h2 title*/
+.title-blue {
+  background-color: $color-blue;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 0 10px 10px;
+}
+
+.title-red {
+  background-color: #EF6A68;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 0 10px 10px;
+}
+
+.title-gray {
+  background-color: $color-gray;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 0 10px 10px;
+}
+
+.title-gray-1 {
+  background-color: $color-gray-1;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 0 10px 10px;
+}
+
+/************************************************************
+ * アンカータグ
+ ************************************************************/
+a { color: $color-anchor; }
+a:hover { color: $color-anchor-hover; }
+
+/************************************************************
+ * アンカータグ 画像の透明化
+ ************************************************************/
+a img {
+  border: none;
+  text-decoration: none;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+a img:hover {
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+}
+
+/* Disabled Navigation Link */
+.disabled-link {
+
+  &.disable-target,
+  .disable-target {
+    opacity: 0.6 !important;
+    filter: alpha(opacity=60) !important;
+
+    &:hover {
+      cursor: not-allowed !important;
+    }
+  }
+
+  &:hover {
+    cursor: not-allowed !important;
+  }
+}
+
+/* label reset */
+label {
+  font-weight: normal;
+}
+
+/* Unstyled List */
+.list-unstyled li > .list-unstyled {
+  margin-left: 25px;
+}
+
+/* Code */
+code {
+  border: 1px solid #e1e1e1;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}

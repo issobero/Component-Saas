@@ -1,0 +1,235 @@
+@charset "UTF-8";
+
+/* except below bootstrap elements */
+.img-circle {
+  border-radius: 50% !important; }
+
+.img-rounded {
+  border-radius: 6px !important; }
+
+/* fa-icon size */
+.fa-14px {
+  font-size: 14px;
+  line-height: 0.75em;
+}
+
+.fa-20px {
+  font-size: 20px;
+  line-height: 0.75em;
+}
+
+.fa-24px {
+  font-size: 24px;
+  line-height: 0.75em;
+}
+
+.fa-30px {
+  font-size: 30px;
+  line-height: 0.75em;
+}
+
+.fa-40x{
+  font-size: 40px;
+  line-height: 0.75em;
+}
+
+.fa-50x{
+  font-size: 50px;
+  line-height: 1em;
+}
+
+.fa-60x{
+  font-size: 60px;
+  line-height: 1em;
+}
+
+.fa-70x{
+  font-size: 70px;
+  line-height: 1em;
+}
+
+.fa-80x{
+  font-size: 80px;
+  line-height: 1em;
+}
+
+.fa-90x{
+  font-size: 90px;
+  line-height: 1em;
+}
+
+.fa-100x{
+  font-size: 100px;
+  line-height: 1em;
+}
+
+/* circle */
+.rounded-x {
+  border-radius: 50% !important;
+}
+
+
+/* icon custom */
+.icon-custom {
+  /* border: 1px solid #686868; */
+  color: #fff;
+  background: #686868 none repeat scroll 0 0;
+  display: inline-block;
+  font-size: 15px;
+  height: 25px;
+  line-height: 25px;
+  margin-bottom: 5px;
+  text-align: center;
+  width: 25px;
+}
+
+/* icon-btn */
+.icon-btn {
+  background-color: #fafafa;
+  background-image: none;
+  border: 1px solid #ddd;
+  box-shadow: none;
+  color: #646464;
+  cursor: pointer;
+  display: inline-block;
+  height: 60px;
+  margin: 0 5px 0 0;
+  /* min-width: 100px; */
+  min-width: 90px;
+  padding: 12px 0 0;
+  position: relative;
+  text-align: center;
+  text-shadow: none;
+  transition: all 0.3s ease 0s;
+}
+
+.icon-btn > .badge {
+  border-radius: 12px;
+  border-style: solid;
+  border-width: 0;
+  box-shadow: none;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 300;
+  padding: 3px 6px;
+  position: absolute;
+  right: -5px;
+  text-shadow: none;
+  top: -5px;
+}
+
+/* label badge */
+.label {
+  display: inline;
+  padding: 3px 9px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+
+}
+
+.badge {
+  text-shadow: none;
+  font-weight: 600;
+  background-color: #d1dade;
+  font-size: 11px;
+  padding-left:6px;
+  padding-right:6px;
+  padding-bottom: 4px;
+  color: #5E5E5E;
+}
+
+//TODO:label もmap-get型へ
+.label-green, .badge-green {
+  background-color: $color-green;
+  color:  #ffffff ;
+}
+
+.label-blue, .badge-blue {
+  background-color: $color-blue;
+  color:  #ffffff ;
+}
+.label-success, .badge-success {
+  background-color: $color-blue-1;
+  color:  #ffffff ;
+}
+.label-important, .badge-important {
+  background-color: $color-blue-1;
+  color:  #ffffff ;
+}
+
+.label-yellow, .badge-yellow {
+  background-color: $color-yellow;
+  color:  #ffffff ;
+}
+.label-red, .badge-red {
+  background-color: $color-red;
+  color:  #ffffff ;
+}
+
+.label-red-1, .badge-red-1 {
+  background-color: $color-red-1;
+  color:  #ffffff ;
+}
+
+.label-primary, .badge-primary {
+  background-color: $color-primary;
+  color:  #ffffff ;
+}
+.label-danger, .badge-danger {
+  background-color: $color-danger;
+  color:  #ffffff ;
+}
+.label-warning, .badge-warning {
+  background-color: $color-waning;
+  color:  #ffffff ;
+}
+.label-info, .badge-info {
+  background-color: $color-aqua;
+  color:  #ffffff ;
+}
+.label-inverse, .badge-inverse {
+  background-color: $color-blue;
+  color:  #ffffff ;
+}
+
+.label-gray, .badge-gray {
+  background-color: $color-gray;
+  color:  #ffffff ;
+}
+
+.label-dark, .badge-dark {
+  background-color: $color-dark;
+  color:  #ffffff ;
+}
+
+.label-dark-2, .badge-dark-2 {
+  background-color: $color-dark-2;
+  color:  #ffffff ;
+}
+
+.label-black-3, .badge-black-3 {
+  background-color: $color-dark-3;
+  color:  #ffffff ;
+}
+
+.label-black-4, .badge-black-4 {
+  background-color: $color-dark-4;
+  color:  #ffffff ;
+}
+
+.label-com-1, .badge-com-1 {
+  background-color: $color-com;
+  color:  #ffffff ;
+}
+
+.label-com-2, .badge-com-2 {
+  background-color: #e5eff9;
+  color:  $color-com ;
+  border: solid 1px $color-com;
+}

@@ -1,0 +1,807 @@
+@charset "UTF-8";
+@import "compass";
+
+// PCファーストで書いて後から
+// モバイル用：@media (max-width: 599px) で打ち消しに統一。
+
+@import "notification";
+@import "campaign";
+@import "information";
+
+// =====================================================
+/* - - mvno_traffic - - */
+#usage #mvno_traffic .wrapper02 {
+  .header_bar {
+    @include display-flex;
+    @include flex-direction(row);
+    @include justify-content(space-between);
+    @include align-content(center);
+    margin-bottom:10px;
+    @media (max-width: 599px) {
+      margin-bottom:5px;
+      @include flex-direction(column);
+    }
+
+    h2 {
+      @include display-flex;
+      @include flex-direction(row);
+      height:35px;
+      line-height:35px;
+      margin:0 0 0 0;
+
+      @media (max-width: 599px) {
+        @include flex-direction(column);
+        height:auto;
+        line-height:1.2;
+      }
+      p {
+        margin:0 0 0 0;
+        padding :0 0 0 0;
+      }
+    }
+
+    .form {
+      border-radius: 4px;
+      border: solid 2px #686868;
+      background-color: #686868;
+      overflow: hidden;
+      box-sizing: border-box;
+      width:365px;
+      height: 35px;
+      @media (max-width: 599px) {
+        width:100%;
+        height: 32px;
+      }
+
+      &::after {
+        content: "";display: block;clear: both;
+      }
+
+      .form-l {
+        width: 35%;
+        height: 100%;
+        background-color: #686868;
+        color: #ffffff;
+        text-align: center;
+        line-height: 30px;
+        float: left;
+      }
+      .form-r {
+        width: 65%;
+        height: 100%;
+        background-color: #ffffff;
+        float: left;
+
+        .sim-num select, .sim-num option {
+          text-align: center;
+          vertical-align: middle;
+          border-radius: 4px;
+          border: none;
+          font-size: 14px;
+          box-sizing: border-box;
+        }
+        .sim-num select {
+          /*　背景画像の指定　*/
+          width:100%;
+          height:30px;
+          margin-right:2%;
+          padding-left:10px;
+          padding-right:20px;
+          background-image:image-url("select-mark.png");
+          background-repeat:no-repeat;
+          background-size:13px 8px;
+          background-position:right 20px center;
+          cursor:pointer;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+        }
+      }
+    }
+
+    @media (max-width: 599px) {
+      .txt14 {
+        font-size: 12px;
+      }
+      .sim-num select, .sim-num option {
+        font-size: 12px;
+      }
+    }
+
+  }
+  // ↑header_bar
+  .inner_wrapper {
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    @media (max-width: 599px) {
+      margin-bottom: 5px;
+      padding: 13px;
+    }
+
+    .container01 {
+      padding-bottom: 5px;
+      border-bottom: solid 1px #000000;
+      @include display-flex;
+      @include flex-direction(row);
+      @include justify-content(space-between);
+      .txt16 {font-size: 16px;}
+      .txt14 {font-size: 14px;}
+
+      @media (max-width: 599px) {
+        @include flex-direction(column);
+        .txt16 {font-size: 13px;}
+        .txt14 {font-size: 12px;}
+      }
+    }
+
+    .wrapper23 {
+      margin:5px 0;
+
+      @include display-flex;
+      @include flex-direction(row);
+      @include justify-content(space-between);
+      @media (max-width: 599px) {
+        @include flex-direction(column);
+      }
+      .container02 {
+        width:490px;
+        @include flex-grow(0);
+        @include flex-shrink(0);
+      }
+      .container03 {
+        @include flex-grow(1);
+        @include flex-shrink(1);
+      }
+
+      .container02, .container03 {
+        @media (max-width: 599px) {
+          width:100%;
+        }
+      }
+
+      .container02 {
+        // グラフエリアはがつんと絶対配置(PC=490px)
+        position:relative;
+
+        // この中で絶対配置する要素はDIV
+        // それ以外のブロック要素はPを使うルールとする…
+        div {
+          position:absolute;
+        }
+        p {
+          margin:0 0 0 0;
+          padding:0 0 0 0;
+        }
+        #type_share {
+          border: 1px solid #686868;
+          color: #686868;
+          padding: 3px;
+          font-size:14px;
+          top: 15px;
+          left: 10px;
+          @media (max-width: 599px) {
+            font-size:12px;
+            top: 0;
+            left: 0;
+          }
+        }
+        #graph_caption {
+          top: 10px;
+          right: 35px;
+          @media (max-width: 599px) {
+            top: 0;
+            right: 3px;
+            font-size: 10px;
+          }
+        }
+        .arrow-r {
+          left: 45px;
+          top: 255px;
+        	width: 70px; /* 四角形の幅 */
+        	height: 25px; /* 四角形の高さ */
+        	background: #686868;
+          @media (max-width: 599px) {
+            left:0;
+            top: 185px; /* 20px分上に */
+            width: 50px; /* 四角形の幅 */
+        		height: 20px; /* 四角形の高さ */
+          }
+
+          span {
+            display:inline-block;
+          	font-family: Helvetica;
+          	font-size: 14px;
+          	color: #ffffff;
+            padding-left:1em;
+            @media (max-width: 599px) {
+              font-size: 11px;
+            }
+
+            &::after {
+              border-left: 13px solid #686868; /* 左向きの三角形を作るため左のボーダーに色を付ける 他は透過 */
+              border-top: 13px solid transparent;
+              border-bottom: 12.5px solid transparent;
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 50%; /* 一旦中央へ寄せる */
+              margin-left: 35px; /* 四角形の幅の半分左へ移動する */
+
+              @media (max-width: 599px) {
+                border-left-width: 10px;
+                border-top-width: 10px;
+                border-bottom-width: 11px;
+                margin-left: 25px;
+              }
+            }
+          }
+        }
+
+        .arrow-l {
+          right: 70px;
+          top: 255px;
+        	width: 70px; /* 四角形の幅 */
+        	height: 25px; /* 四角形の高さ */
+        	background: #686868;
+          @media (max-width: 599px) {
+            right:0;
+            top: 185px; /* 20px分上に */
+
+            width: 50px; /* 四角形の幅 */
+            height: 20px; /* 四角形の高さ */
+          }
+
+          span {
+            display:inline-block;
+          	font-family: Helvetica;
+          	font-size: 14px;
+          	color: #ffffff;
+            padding-left:1em;
+            @media (max-width: 599px) {
+              font-size: 11px;
+            }
+            &::after {
+              border-right: 13px solid #686868; /* 右向きの三角形を作るため左のボーダーに色を付ける 他は透過 */
+              border-top: 13px solid transparent;
+              border-bottom: 12.5px solid transparent;
+              content: "";
+              position: absolute;
+              top: 0;
+              right: 50%; /* 一旦中央へ寄せる */
+              margin-right: 35px; /* 四角形の幅の半分右へ移動する */
+
+              @media (max-width: 599px) {
+                border-right-width: 10px;
+                border-top-width: 10px;
+                border-bottom-width: 11px;
+                margin-right: 25px; /* 四角形の幅の半分右へ移動する */
+              }
+            }
+          }
+        }
+
+        #item-container {
+          position: relative; // これだけフロート化しない（表の行数は可変。影響を受けないように）
+          margin-top:55px;
+          margin-left:100px;
+          margin-bottom:10px;
+          width: 240px;
+          height:240px;
+          // svg
+          #chart {
+            position: static;
+            width: 100%;
+          }
+          @media (max-width: 599px) {
+            // 中央寄せ
+            margin:35px auto 0;
+            width: 180px;
+            height:180px;
+          }
+
+          #capacity_summary {
+            top: 50%;
+            left: 50%;
+            @include translate(-50%, -50%);
+            text-align:center;
+            z-index:45;
+
+            .total {
+              width: 70px;
+              border-radius: 4px;
+              border: none;
+              background-color: #e41f31;
+              padding: 5px;
+              color: #ffffff;
+              margin:0 auto;
+            }
+            .line {
+              border-bottom: solid 1px #686868;
+              width:143px;
+              height:1px;
+              margin:0 auto;
+            }
+          }
+          #regulation_status {
+            bottom:12px;
+            left: 50%;
+            @include translateX(-50%);
+          }
+        }
+
+        // font-sizeの上書きまとめて指定
+        @media (max-width: 599px) {
+          .txt14 {
+            font-size:12px;
+          }
+          .txt32b {
+            font-size:25px;
+          }
+          .txt18 {
+            font-size:16px;
+          }
+        }
+      }
+      // ↑.container02
+
+      .container03 {
+        .txt12 {
+          @media (max-width: 599px) {
+            font-size: 12px;
+          }
+        }
+
+        // 各容量値の表
+        .data-desc {
+          width:100%;
+          border-collapse: separate;
+          border-spacing: 1px;
+
+          th, td {
+            background-color: #faf2eb;
+            padding: 10px;
+            text-align: left;
+            @media (max-width: 599px) {
+              padding: 8px 10px 8px 10px;
+            }
+          }
+
+          th {
+            white-space: nowrap;
+            max-width:10em;
+            @media (max-width: 599px) {
+              font-size: 10px;
+            }
+          }
+          td {
+            @media (max-width: 599px) {
+              font-size: 12px;
+            }
+          }
+
+          td.onoff {
+            @include display-flex;
+            @include flex-direction(row);
+            @include justify-content(space-between);
+            @include align-items(center);
+
+            .change {
+              width: 150px;
+              height: 26px;
+              border-radius: 4px;
+              border: solid 1px #cccccc;
+              background-color: #ffffff;
+              margin: 0 5px;
+              @media (max-width: 599px) {
+                width: 108px;
+                height: 18px;
+              }
+
+              a {
+                width: 100%;
+                height: 100%;
+                display: block;
+                padding: 0px 0px 0px 15px;
+                text-decoration: none;
+                color: #0066ff;
+                line-height: 26px; /* height と一致させる*/
+                border-radius: 4px;
+                box-sizing: border-box;
+                position:relative; // アングルブラケット用
+
+                &:hover {
+                  background-color: #d7e7ff;
+                }
+                // アングルブラケットの追加
+                &::after {
+                  content: "";
+                  display: inline;
+                  width: 6px;
+                  height: 6px;
+                  border: solid #333333;
+                  border-width: 2px 2px 0 0;
+                  @include rotate(45deg);
+                  margin-right: 10px;
+                  position: absolute;
+                  top: 50%;
+                  right: 5px;
+                  margin-top: -5px;
+                  @media (max-width: 599px) {
+                    width: 4px;
+                    height: 4px;
+                    margin-right: 3px;
+                  }
+                }
+
+                @media (max-width: 599px) {
+                  line-height: 18px;
+                  font-size: 10px;
+                  padding: 0px 0px 0px 5px;
+                }
+              }
+            }
+          }
+          td.total_traffic_cell {
+            padding:2px 10px 2px 10px;
+            font-size:12px;
+            @media (max-width: 599px) {
+              font-size: 10px;
+            }
+          }
+          //data-desc
+        }
+      }
+      // ↑.container03
+    }
+    // ↑.wrapper23
+  }
+  // ↑inner_wrapper
+}
+
+// =====================================================
+/***************************/
+
+#user_contruct .wrapper03 {
+  // Relativeでは不都合があったので変更
+  .header_bar {
+    @include display-flex;
+    @include flex-direction(row);
+    @include justify-content(space-between);
+    @include align-items(center);
+    margin-bottom:10px;
+    @media (max-width: 599px) {
+      margin-bottom:5px;
+    }
+
+    h2 {
+      @include flex(0 0 auto); //.header_bar>h2は改行させたくない
+      @include display-flex;
+      @include flex-direction(row);
+      @include flex-wrap(nowrap);
+      height:30px;
+      line-height: 30px;
+      margin:0 0 0 0;
+      @media (max-width: 599px) {
+      }
+      p {
+        margin:0 0 0 0;
+        padding :0 0 0 0;
+      }
+    }
+    .wrap {
+      @include display-flex;
+      @include flex-direction(row);
+      @include flex-wrap(nowrap);
+      @media (max-width: 599px) {
+        @include flex-wrap(wrap);
+      }
+
+      .change {
+        width: 190px;
+        height: 30px;
+        border-radius: 4px;
+        border: solid 1px #cccccc;
+        background-color: #ffffff;
+        margin: 0 0 0 5px;
+
+        @media (max-width: 599px) {
+          width: 140px;
+          height: 18px;
+        }
+
+        &.ocndenwa {
+          width: 230px;
+          @media (max-width: 599px) {
+            width: 180px;
+          }
+        }
+
+        a {
+          width: 100%;
+          height: 100%;
+          display: block;
+          padding: 0px 0px 0px 20px;
+          text-decoration: none;
+          color: #0066ff;
+          line-height: 30px; /* height と一致させる*/
+          border-radius: 4px;
+          box-sizing: border-box;
+          position: relative; // アングルブラケット用
+
+          &:hover {
+            background-color: #d7e7ff;
+          }
+          // アングルブラケットの追加
+          &::after {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border: solid #333333;
+            border-width: 2px 2px 0 0;
+            position: absolute;
+            top:50%;
+            right: 0;
+            margin-right: 10px;
+            margin-top: -5px;
+            @include rotate(45deg);
+            @media (max-width: 599px) {
+              width: 4px;
+              height: 4px;
+              margin-right: 3px;
+            }
+          }
+
+          @media (max-width: 599px) {
+            line-height: 18px;
+            font-size: 10px;
+            padding: 0px 0px 0px 5px;
+          }
+        }
+      }
+
+    }
+  }
+  // ↑header_bar
+
+  //
+  .inner_wrapper {
+    @include display-flex;
+    @include flex-direction(row);
+    @include flex-wrap(nowrap);
+    @include justify-content(space-between) ;
+
+    @media (max-width: 599px) {
+      @include flex-direction(column);
+    }
+
+    // .contents-bg
+    .contents-l,.contents-r {
+      background-color: #ffffff;
+      border-radius: 4px;
+      box-sizing: border-box;
+
+      @include flex-grow(1);
+      @include flex-shrink(1);
+    }
+    .contents-l + .contents-r {
+      margin:0 0 0 10px;
+      @media (max-width: 599px) {
+        margin:10px 0 0 0;
+      }
+    }
+
+    // 各サービスの登録状況リンク継承用
+    %service_info_link {
+      a {
+        text-decoration: none;
+        height:100%;
+        @include display-flex;
+        @include flex-direction(row);
+        @include flex-wrap(nowrap);
+        @include justify-content(space-between);
+        @include border-radius(4px);
+
+        @media (max-width: 599px) {
+          @include flex-direction(column-reverse);
+          @include flex-wrap(wrap);
+        }
+        &:hover {
+          background-color: #d7e7ff;
+        }
+      }
+    }
+    .ocn_service_info,
+    .phone_service_info,
+    .cocoa_service_info {
+      @extend %service_info_link;
+      height:3.5em;
+      margin-bottom:1em;
+      @media (max-width: 599px) {
+        height:auto;
+        margin-bottom:1em;
+      }
+    }
+
+    // OCNサービス
+    .contents-l {
+      padding: 10px;
+    }
+    // ↑.contents-l(OCNサービス)
+
+    // 電話サービス、Cocoaサービス
+    .contents-r {
+      @include display-flex;
+      @include flex-direction(row);
+
+      .container-r1, .container-r2{
+        padding: 10px;
+        @include flex-grow(1);
+        @include flex-shrink(1);
+        width:50%;
+      }
+
+      .container-r1 + .container-r2{
+        border-left: 1px solid #cccccc
+      }
+      .container-r1 {
+      }
+      // ↑.container-r1
+      .container-r2 {
+        @media (max-width: 599px) {
+          .sbr {
+            display:none;
+          }
+        }
+      }
+      //↑.container-r2
+    }
+    // ↑.contents-r(電話サービス、Cocoaサービス)
+
+    /* - -共通checkbox - - */
+    .ck {
+    	width:80px; height:32px;line-height: 24px;
+      @media (max-width: 599px) {
+        width:60px; height:17px;line-height: 11px;font-size: 10px;
+      }
+    }
+    .check {
+    	width: 14px;
+    	height: 14px;
+    	background-image: image-url("check.png");
+    	background-position: center;
+    	background-repeat: no-repeat;
+    	background-size:14px 14px;
+    	display: inline-block;
+    	margin: 5px 5px 8px 7px;
+      @media (max-width: 599px) {
+        width: 10px;
+    		height: 10px;
+    		background-image: image-url("check.png");
+    		background-position: center;
+    		background-repeat: no-repeat;
+    		background-size:10px 10px;
+    		display: inline-block;
+    		margin: 0px 5px 3.5px 3.5px;
+      }
+    }
+    /***************************/
+  }
+
+  //==========================
+  // Details-Summary表示
+  // HTML5要素としてはブラウザ対応が進んでいない
+  #ocn_service_plan_summary,
+  #phone_service_summary,
+  #cocoa_service_summary {
+    p {
+      margin :0 0 0 0;
+      padding: 0 0 0 0;
+    }
+  }
+
+  .details_container {
+    //サマリーはPC用。SP版では非表示となる
+    .summary {
+      border-radius: 4px;
+      border: none;
+      background-color: #faf2eb;
+      display: block;
+      padding: 10px;
+      line-height: 1.5em;
+      position: relative;
+
+      @media (max-width: 599px) {
+        display:none !important;
+      }
+      &:hover {
+        cursor: help;
+        cursor: pointer;
+      }
+      &::after {
+        content: "";
+        display: inline-block;
+        width:8px;
+        height:8px;
+        border: solid #000000;
+        border-width: 3px 3px 0 0;
+        @include rotate(45deg);
+        position: absolute;
+        right:8px;
+        top: 1em;
+      }
+    }
+    // SP用。ただし、PC版から呼ぶときは特定のクラス(0)付。ポップアップ的な表示をする
+    section {
+      display:none;
+      border-radius: 4px;
+      border:1px solid #dddddd;
+      background-color: #faf2eb;
+      font-size: 12px;
+      line-height:1;
+      padding: 5px;
+      @media (max-width: 599px) {
+        //PC版のONOFF結果を反映しない
+        display: block !important;
+        position:static !important;
+        top:auto !important;
+        left:auto !important;
+      }
+
+      // SP版も初期値はタイトルのみ。Toggleで詳細を開閉する
+      h3 {
+        font-size: 14px;
+        font-weight: 700;
+        margin:5px 0;
+        padding:0 0 0 0;
+      }
+      .details {
+        display:none;
+        padding:2px 2px 2px 12px;
+        line-height:1.2;
+      }
+
+      @media (max-width: 599px) {
+        &.detail_open {
+          .details {
+            display:block !important;
+          }
+        }
+      }
+
+      //PC 版
+      @media (min-width: 600px) {
+        &.showDisp {
+          width:400px;
+          display:block;
+          position:absolute;
+          border:5px solid #dddddd;
+          background-color: #fefefe;
+          z-index:5;
+          .details {
+            display:block;
+          }
+          &::after {
+            border-color: transparent transparent #dddddd;
+            border-style: solid;
+            border-width: 0 10px 10px;
+            content: "";
+            display: block;
+            height: 0;
+            left: 50%;
+            margin-left: -10px;
+            position: absolute;
+            top: -12px;
+            width: 0;
+            z-index: -1;
+          }
+        }
+      }
+    }
+
+  }
+
+}

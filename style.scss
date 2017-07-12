@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+// Core variables
+@import "compass";
+
+// Core Vender Css
+@import "vender/bootstrap/bootstrap";
+@import "global/boot-reset";
+
+// plugin
+@import "form/form_plugins";
+
+// Web Components Engine
+@import "global/components/custom/furusatomarche_custom";
+@import "global/components";
+
+// Layout Css
+@import "layouts/default";
+
+
+// Core Css
+@import "base/main";
+
+// vaildation masseage css
+// @import "form/validation";

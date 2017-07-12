@@ -1,0 +1,36 @@
+@charset "UTF-8";
+@import "compass";
+// =====================================================
+
+/* - - - - - - - - - - - - footer - - - - - - - - - - - - */
+
+footer {
+  width:100%;
+  background-color: #fff;
+  border-top: 2px solid #e41f31;
+  padding: 5px 0 10px 0;
+}
+
+.footer-function .function a {
+  color: #686868;
+  text-decoration: underline;
+}
+.footer-function .function {
+  font-size: 12px;
+  @media (max-width: 767px) {
+    font-size: 10px;
+  }
+}
+
+.footer-function .function + .function:before {
+  color: #333;
+  content: "|";
+  margin: 0 10px;
+}
+
+.copyright {
+  margin-top: 10px;
+  @media (max-width: 767px) {
+    font-size: 10px;
+  }
+}
