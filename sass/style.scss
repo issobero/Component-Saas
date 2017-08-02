@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+// Core Font
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700');
+
 // Core variables
 @import "compass";
 
@@ -11,12 +14,11 @@
 @import "form/form_plugins";
 
 // Web Components Engine
-@import "global/components/custom/furusatomarche_custom";
+@import "global/components/custom/fujita_custom";
 @import "global/components";
 
 // Layout Css
-@import "layouts/default";
-
+@import "layouts";
 
 // Core Css
 @import "base/main";

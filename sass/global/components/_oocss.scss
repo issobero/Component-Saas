@@ -4,10 +4,19 @@
 * Global layout
 *************************************************************/
 
+//section layout
 section {
+  @media only screen and (max-width: 992px) {
+    margin: 0 10px;
+  }
   @media (max-width: 767px) {
     margin: 0 10px;
   }
+}
+
+//audio layout
+audio {
+  width: 350px;
 }
 
 /************************************************************
@@ -92,6 +101,20 @@ hr.dashed {
 /**************************************************************
  * box
 **************************************************************/
+
+.admin-portlet-box {
+  padding: 12px 20px 15px;
+  box-shadow: 0 2px 3px 2px rgba(0,0,0,.03);
+  border-radius: 2px;
+  background-color: $color-white;
+}
+
+.admin-portlet-side-box {
+  box-shadow: 0 2px 3px 2px rgba(0,0,0,.03);
+  border-radius: 2px;
+  background-color: $color-white;
+}
+
 .white-box {
   // box-sizing: border-box;
   // margin: 10px;
@@ -207,6 +230,8 @@ hr.dashed {
 .opa-04 { opacity: 0.4; }
 .opa-02 { opacity: 0.2; }
 
+.animated-infinite { animation-iteration-count: infinite; }
+
 /************************************************************
 * font background Color Palette
 ************************************************************/
@@ -257,6 +282,7 @@ hr.dashed {
 .bg-gray-3   { background: none repeat scroll 0 0 $color-gray-3; }
 
 .bg-gray-body { background: none repeat scroll 0 0 $color-gray-body; }
+.bg-gray-body-2 { background: none repeat scroll 0 0 $color-gray-body-2; }
 
 /* color pink */
 .f-pink  { color: $color-pink; }
@@ -267,9 +293,8 @@ hr.dashed {
 .bg-pink2 { background: none repeat scroll 0 0 #ff4574; }
 .bg-pink3 { background: none repeat scroll 0 0 #f12b5b; }
 
-
 /* Default Color Palette 基本8色 */
-.f-red     { color: $color-red; }
+.f-red     { color: $color-red; }　
 .f-blue    { color: $color-blue; }
 .f-yellow  { color: $color-yellow; }
 .f-green   { color: $color-green; }
@@ -279,12 +304,12 @@ hr.dashed {
 .f-blue-ws { color: $color-blue-ws; }
 .bg-blue-ws { color: $color-blue-ws; }
 
-.bg-red    { background: none repeat scroll 0 0 $color-red; }
-.bg-blue   { background: none repeat scroll 0 0 $color-blue; }
-.bg-yellow { background: none repeat scroll 0 0 $color-yellow; }
-.bg-green  { background: none repeat scroll 0 0 $color-green; }
-.bg-emerald{ background: none repeat scroll 0 0 $color-emerald; }
-.bg-purple { background: none repeat scroll 0 0 $color-purple; }
+.bg-red    　{ background: none repeat scroll 0 0 $color-red; }
+.bg-blue   　{ background: none repeat scroll 0 0 $color-blue; }
+.bg-yellow 　{ background: none repeat scroll 0 0 $color-yellow; }
+.bg-green  　{ background: none repeat scroll 0 0 $color-green; }
+.bg-emerald　{ background: none repeat scroll 0 0 $color-emerald; }
+.bg-purple 　{ background: none repeat scroll 0 0 $color-purple; }
 
 /* Pastel Color Palette 基本8色 */
 .f-green-Pastel  { color: #19b3a5; }
@@ -362,68 +387,16 @@ hr.dashed {
 /************************************************************
 * font-size
 ************************************************************/
-.fs60 { font-size: 60px; }
-.fs59 { font-size: 59px; }
-.fs58 { font-size: 58px; }
-.fs57 { font-size: 57px; }
-.fs56 { font-size: 56px; }
-.fs55 { font-size: 55px; }
-.fs54 { font-size: 54px; }
-.fs53 { font-size: 53px; }
-.fs52 { font-size: 52px; }
-.fs51 { font-size: 51px; }
-.fs50 { font-size: 50px; }
-.fs49 { font-size: 49px; }
-.fs48 { font-size: 48px; }
-.fs47 { font-size: 47px; }
-.fs46 { font-size: 46px; }
-.fs45 { font-size: 45px; }
-.fs44 { font-size: 44px; }
-.fs43 { font-size: 43px; }
-.fs42 { font-size: 42px; }
-.fs41 { font-size: 41px; }
-.fs40 { font-size: 40px; }
-.fs39 { font-size: 39px; }
-.fs38 { font-size: 38px; }
-.fs37 { font-size: 37px; }
-.fs36 { font-size: 36px; }
-.fs35 { font-size: 35px; }
-.fs34 { font-size: 34px; }
-.fs33 { font-size: 33px; }
-.fs32 { font-size: 32px; }
-.fs31 { font-size: 31px; }
-.fs30 { font-size: 30px; }
-.fs29 { font-size: 29px; }
-.fs28 { font-size: 28px; }
-.fs27 { font-size: 27px; }
-.fs26 { font-size: 26px; }
-.fs25 { font-size: 25px; }
-.fs24 { font-size: 24px; }
-.fs23 { font-size: 23px; }
-.fs22 { font-size: 22px; }
-.fs21 { font-size: 21px; }
-.fs20 { font-size: 20px; }
-.fs19 { font-size: 19px; }
-.fs18 { font-size: 18px; }
-.fs17 { font-size: 17px; }
-.fs16 { font-size: 16px; }
-.fs15 { font-size: 15px; }
-.fs14 { font-size: 14px; }
-.fs13 { font-size: 13px; }
-.fs12 { font-size: 12px; }
-.fs11 { font-size: 11px; }
-.fs10 { font-size: 10px; }
-.fs9  { font-size:  9px; }
-.fs8  { font-size:  8px; }
-.fs7  { font-size:  7px; }
-.fs6  { font-size:  6px; }
-.fs5  { font-size:  5px; }
-.fs4  { font-size:  4px; }
-.fs3  { font-size:  3px; }
-.fs2  { font-size:  2px; }
-.fs1  { font-size:  1px; }
 
-.fs33i { font-size: 33px !important;}
+//font-size
+@for $i from 1 through 100 {
+  .fs#{$i} {
+    font-size: #{$i}px;
+  }
+  .fs#{$i}i {
+    font-size: #{$i}px !important;
+  }
+}
 
 /* font-weight  */
 .fwb100 { font-weight: 100; }
@@ -457,297 +430,91 @@ hr.dashed {
 * width設定
 ******************************************/
 
+@for $i from 1 through 1000 {
+  .w#{$i} {
+    width: #{$i}px;
+  }
+  .mwd#{$i} {
+    max-width: #{$i}px;
+  }
+}
+
 .w15pct { width: 15%; }
 .w20pct { width: 20%; }
 .w25pct { width: 25%; }
 .w30pct { width: 30%; }
 .w80pct { width: 80%; }
 .w100pct{ width: 100%; }
-.wd27   { width: 27px; }
-.wd35   { width: 35px; }
-.wd40   { width: 40px; }
-.wd45   { width: 45px; }
-.wd50   { width: 50px; }
-.wd55   { width: 55px; }
-.wd60   { width: 60px; }
-.wd63   { width: 63px; }
-.wd64   { width: 64px; }
-.wd70   { width: 70px; }
-.wd74   { width: 74px; }
-.wd77   { width: 77px; }
-.wd79 	{ width: 79px; }
-.wd80   { width: 80px; }
-.wd85   { width: 85px; }
-.wd89 	{ width: 89px; }
-.wd90   { width: 90px; }
-.wd91   { width: 91px; }
-.wd94	  { width: 94px; }
-.wd100  { width: 100px; }
-.wd114  { width: 114px; }
-.wd115  { width: 115px; }
-.wd117  { width: 117px; }
-.wd119  { width: 119px; }
-.wd130  { width: 130px; }
-.wd152  { width: 152px; }
-.wd155  { width: 155px; }
-.wd158  { width: 158px; }
-.wd160  { width: 160px; }
-.wd165  { width: 165px; }
-.wd167  { width: 167px; }
-.wd170  { width: 170px; }
-.wd175  { width: 175px; }
-.wd180  { width: 180px; }
-.wd190  { width: 190px; }
-.wd198  { width: 198px; }
-.wd200  { width: 200px; }
-.wd210  { width: 210px; }
-.wd420  { width: 420px; }
-.wd460	{ width: 460px; }
-.wd460	{ width: 460px; }
-.wd470	{ width: 470px; }
-.wd480	{ width: 480px; }
-.wd550	{ width: 550px; }
-.wd557	{ width: 557px; }
-.wd558	{ width: 558px; }
-.wd749	{ width: 749px; }
-.wd780	{ width: 780px; }
 
-.mwd380 { max-width: 380px; }
-.mwd420 { max-width: 420px; }
-.mwd440 { max-width: 440px; }
 
 /************************************************************
 * height
 *************************************************************/
 
-.ht900 { height: 900px; }
-.ht850 { height: 850px; }
-.ht800 { height: 800px; }
-.ht750 { height: 750px; }
-.ht700 { height: 700px; }
-.ht650 { height: 650px; }
-.ht600 { height: 600px; }
-.ht500 { height: 500px; }
-.ht400 { height: 400px; }
-.ht300 { height: 300px; }
-.ht200 { height: 200px; }
-.ht100 { height: 100px; }
-.ht50  { height:  50px; }
+// height 1 ~ 1000px まで
+// example
+// ht120 => height: 120px;
+@for $i from 1 through 1000 {
+  .ht#{$i} {
+    height: #{$i}px;
+  }
+}
 
 /************************************************************
  * bootstrap padding
  * default
- * グリッドデザイン
  ************************************************************/
 
-.pd0  { padding: 0; }
-.pd10 { padding: 10px; }
-.pd20 { padding: 20px; }
-.pd30 { padding: 30px; }
-.pd40 { padding: 40px; }
-.pd50 { padding: 50px; }
-
-.pdt0  { padding-top: 0; }
-.pdt1  { padding-top: 1px; }
-.pdt2  { padding-top: 2px; }
-.pdt3  { padding-top: 3px; }
-.pdt4  { padding-top: 4px; }
-.pdt5  { padding-top: 5px; }
-.pdt10 { padding-top: 10px; }
-.pdt15 { padding-top: 15px; }
-.pdt20 { padding-top: 20px; }
-.pdt30 { padding-top: 30px; }
-.pdt40 { padding-top: 40px; }
-.pdt50 { padding-top: 50px; }
-
-.pdb5  { padding-bottom: 5px; }
-.pdb10 { padding-bottom: 10px; }
-.pdb15 { padding-bottom: 15px; }
-.pdb19 { padding-bottom: 19px; }
-.pdb20 { padding-bottom: 20px; }
-.pdb25 { padding-bottom: 25px; }
-.pdb30 { padding-bottom: 30px; }
-.pdb34 { padding-bottom: 34px; }
-.pdb40 { padding-bottom: 40px; }
-.pdb50 { padding-bottom: 50px; }
-
-.pdr5  { padding-right: 5px;  }
-.pdr10 { padding-right: 10px; }
-.pdr15 { padding-right: 15px; }
-.pdr20 { padding-right: 20px; }
-.pdr25 { padding-right: 25px; }
-.pdr30 { padding-right: 30px; }
-.pdr35 { padding-right: 35px; }
-.pdr40 { padding-right: 40px; }
-.pdr45 { padding-right: 45px; }
-.pdr80 { padding-right: 80px; }
-
-.pdl5  { padding-left: 5px;  }
-.pdl10 { padding-left: 10px; }
-.pdl15 { padding-left: 15px; }
-.pdl20 { padding-left: 20px; }
-.pdl25 { padding-left: 25px; }
-.pdl30 { padding-left: 30px; }
-.pdl35 { padding-left: 35px; }
-.pdl40 { padding-left: 40px; }
-.pdl45 { padding-left: 45px; }
-.pdl50 { padding-left: 50px; }
-.pdl55 { padding-left: 55px; }
-.pdl60 { padding-left: 60px; }
-.pdl65 { padding-left: 65px; }
-.pdl70 { padding-left: 70px; }
-.pdl80 { padding-left: 80px; }
-.pdl90 { padding-left: 90px; }
-.pdl100 { padding-left: 100px; }
-.pdl110 { padding-left: 110px; }
-.pdl125 { padding-left: 125px; }
-.pdl135 { padding-left: 135px; }
-.pdl145 { padding-left: 145px; }
-.pdl150 { padding-left: 150px; }
-.pdl155 { padding-left: 155px; }
-.pdl165 { padding-left: 165px; }
-.pdl175 { padding-left: 175px; }
-
-/* padding-height 上下高さ */
-.pdh5 { padding: 5px 0; }
-.pdh10 { padding: 10px 0; }
-.pdh15 { padding: 15px 0; }
-.pdh20 { padding: 20px 0; }
-.pdh25 { padding: 25px 0; }
-.pdh30 { padding: 30px 0; }
+// 250pxまで定義
+@for $i from 0 through 250 {
+  .pd#{$i} {
+    padding: #{$i}px;
+  }
+  .pdt#{$i} {
+    padding-top: #{$i}px;
+  }
+  .pdb#{$i} {
+    padding-bottom: #{$i}px;
+  }
+  .pdr#{$i} {
+    padding-right: #{$i}px;
+  }
+  .pdl#{$i} {
+    padding-left: #{$i}px;
+  }
+  /* padding-height 上下高さ */
+  .pdh#{$i} {
+    padding: #{$i}px 0;
+  }
+}
 
 /* margin */
 .mg0auto  { margin: 0 auto; }
-.mg0  { margin: 0; }
-.mg10 { margin: 10px; }
-.mg20 { margin: 20px; }
-.mg30 { margin: 30px; }
-.mg40 { margin: 40px; }
 
-/* margin-height 上下高さ */
-.mgh5 { margin: 5px 0 ; }
-.mgh10 { margin: 10px 0 ; }
-.mgh15 { margin: 15px 0 ; }
-.mgh20 { margin: 20px 0 ; }
-.mgh25 { margin: 25px 0 ; }
-.mgh30 { margin: 30px 0 ; }
-.mgh35 { margin: 35px 0 ; }
-.mgh40 { margin: 40px 0 ; }
-.mgh45 { margin: 45px 0 ; }
-.mgh50 { margin: 50px 0 ; }
-.mgh55 { margin: 55px 0 ; }
-.mgh60 { margin: 60px 0 ; }
-.mgh65 { margin: 65px 0 ; }
-.mgh70 { margin: 70px 0 ; }
-.mgh75 { margin: 75px 0 ; }
-.mgh80 { margin: 80px 0 ; }
-
-/* margin-side 左右サイド */
-.mgs10 { margin: 0 10px;}
-.mgs15 { margin: 0 15px;}
-.mgs20 { margin: 0 20px;}
-.mgs25 { margin: 0 25px;}
-.mgs30 { margin: 0 30px;}
-.mgs35 { margin: 0 35px;}
-.mgs40 { margin: 0 40px;}
-.mgs45 { margin: 0 45px;}
-.mgs50 { margin: 0 50px;}
-.mgs55 { margin: 0 55px;}
-.mgs60 { margin: 0 60px;}
-.mgs65 { margin: 0 65px;}
-.mgs70 { margin: 0 70px;}
-.mgs75 { margin: 0 75px;}
-.mgs80 { margin: 0 80px;}
-.mgs85 { margin: 0 85px;}
-.mgs90 { margin: 0 90px;}
-.mgs95 { margin: 0 95px;}
-
-.mgl0 { margin-left: 0; }
-.mgl5 { margin-left: 5px; }
-.mgl10 { margin-left: 10px; }
-.mgl15 { margin-left: 15px; }
-.mgl20 { margin-left: 20px; }
-.mgl25 { margin-left: 25px; }
-.mgl30 { margin-left: 30px; }
-.mgl35 { margin-left: 35px; }
-.mgl40 { margin-left: 40px; }
-.mgl45 { margin-left: 45px; }
-.mgl50 { margin-left: 50px; }
-.mgl55 { margin-left: 55px; }
-.mgl60 { margin-left: 60px; }
-
-.mgr0 { margin-right: 0; }
-.mgr1 { margin-right: 1px; }
-.mgr2 { margin-right: 2px; }
-.mgr3 { margin-right: 3px; }
-.mgr4 { margin-right: 4px; }
-.mgr5 { margin-right: 5px; }
-.mgr6 { margin-right: 6px; }
-.mgr7 { margin-right: 7px; }
-.mgr8 { margin-right: 8px; }
-.mgr9 { margin-right: 9px; }
-.mgr10 { margin-right: 10px; }
-.mgr15 { margin-right: 15px; }
-.mgr20 { margin-right: 20px; }
-.mgr25 { margin-right: 25px; }
-.mgr30 { margin-right: 30px; }
-
-.mgt0  { margin-top:  0; }
-.mgt1  { margin-top:  1px; }
-.mgt2  { margin-top:  2px; }
-.mgt3  { margin-top:  3px; }
-.mgt4  { margin-top:  4px; }
-.mgt5  { margin-top:  5px; }
-.mgt6  { margin-top:  6px; }
-.mgt7  { margin-top:  7px; }
-.mgt8  { margin-top:  8px; }
-.mgt9  { margin-top:  9px; }
-.mgt10 { margin-top: 10px; }
-.mgt15 { margin-top: 15px; }
-.mgt18 { margin-top: 18px; }
-.mgt20 { margin-top: 20px; }
-.mgt25 { margin-top: 25px; }
-.mgt30 { margin-top: 30px; }
-.mgt35 { margin-top: 35px; }
-.mgt40 { margin-top: 40px; }
-.mgt45 { margin-top: 45px; }
-.mgt50 { margin-top: 50px; }
-.mgt55 { margin-top: 55px; }
-.mgt60 { margin-top: 60px; }
-.mgt70 { margin-top: 70px; }
-.mgt80 { margin-top: 80px; }
-.mgt90 { margin-top: 90px; }
-.mgt100 { margin-top: 100px; }
-.mgt110 { margin-top: 110px; }
-.mgt120 { margin-top: 120px; }
-.mgt130 { margin-top: 130px; }
-.mgt140 { margin-top: 140px; }
-.mgt150 { margin-top: 150px; }
-
-.mgb0  { margin-bottom: 0; }
-.mgb1  { margin-bottom: 1px; }
-.mgb2  { margin-bottom: 2px; }
-.mgb3  { margin-bottom: 3px; }
-.mgb4  { margin-bottom: 4px; }
-.mgb5  { margin-bottom: 5px; }
-.mgb10 { margin-bottom: 10px; }
-.mgb15 { margin-bottom: 15px; }
-.mgb20 { margin-bottom: 20px; }
-.mgb25 { margin-bottom: 25px; }
-.mgb30 { margin-bottom: 30px; }
-.mgb35 { margin-bottom: 35px; }
-.mgb40 { margin-bottom: 40px; }
-.mgb45 { margin-bottom: 45px; }
-.mgb50 { margin-bottom: 50px; }
-.mgb55 { margin-bottom: 55px; }
-.mgb60 { margin-bottom: 60px; }
-.mgb70 { margin-bottom: 70px; }
-.mgb80 { margin-bottom: 80px; }
-.mgb90 { margin-bottom: 90px; }
-.mgb95 { margin-bottom: 95px; }
-.mgb100 { margin-bottom: 100px; }
-.mgb105 { margin-bottom: 105px; }
-.mgb110 { margin-bottom: 110px; }
+// 250pxまで定義
+@for $i from 0 through 250 {
+  .mg#{$i} {
+    margin: #{$i}px;
+  }
+  .mgh#{$i} {
+    margin: #{$i}px 0;
+  }
+  .mgs#{$i} {
+    margin: 0 #{$i}px;
+  }
+  .mgl#{$i} {
+    margin-left: #{$i}px;
+  }
+  .mgr#{$i} {
+    margin-right: #{$i}px;
+  }
+  .mgt#{$i} {
+    margin-top: #{$i}px;
+  }
+  .mgb#{$i} {
+    margin-bottom: #{$i}px;
+  }
+}
 
 .mg0i  { margin: 0 !important; }
 
@@ -797,10 +564,16 @@ hr.dashed {
 /*************************************************************
 /* border: #5f6f7e
 *************************************************************/
+
+.b-gray { border: 1px solid $color-gray; }
+.b-gray-1 { border: 1px solid $color-gray-1; }
+
+.bb-sol-green { border-bottom: 2px solid $color-green; }
+.bb-sol-pastel-green { border-bottom: 1px solid #0aa699 !important; }
+
 .bb-g { border-bottom: 2px solid #b7bbbf; }
 .bb-sol-blue { border-bottom: 1px solid $color-blue; }
 .bb-dot-blue { border-bottom: 1px solid $color-blue; }
-
 
 .b-sol  { border:solid 1px #ccc; }
 .b-sol-black { border:solid 1px #5A5A5A;}
@@ -820,28 +593,43 @@ hr.dashed {
 .bl-dot { border-left: dotted 1px #ccc; }
 .br-dot { border-right:dotted 1px #ccc; }
 
+.bt-sol-pastel-red { border-top: 4px solid #f35958;}
+.bt-sol-pastel-blue { border-top: 4px solid #0090d9; }
+.bt-sol-pastel-purple { border-top: 4px solid #735f87; }
+.bt-sol-pastel-green { border-top: 4px solid #0aa699; }
+
+/* text pick up: 4px 8px; */
+.bl-sol-pick-666 {
+  border-left: 3px solid #666;
+  padding: 4px 8px;
+}
+
+.bl-sol-pastel-green  {
+  border-left: 3px solid #0aa699;
+  padding: 4px 8px;
+}
+
+.bl-sol-pick-green {
+  border-left: 3px solid $color-green;
+  padding: 4px 8px;
+}
+
+.bl-sol-pick-blue {
+  border-left: 3px solid $color-blue;
+  padding: 4px 8px;
+}
+
+.bl-sol-pick-red {
+  border-left: 3px solid $color-red;
+  padding: 4px 8px;
+}
+
 /* border radius */
-.bdr0  { border-radius:  0; }
-.bdr1  { border-radius:  1px; }
-.bdr2  { border-radius:  2px; }
-.bdr3  { border-radius:  3px; }
-.bdr4  { border-radius:  4px; }
-.bdr5  { border-radius:  5px; }
-.bdr6  { border-radius:  5px; }
-.bdr7  { border-radius:  7px; }
-.bdr8  { border-radius:  8px; }
-.bdr9  { border-radius:  9px; }
-.bdr10 { border-radius: 10px; }
-.bdr15 { border-radius: 15px; }
-.bdr20 { border-radius: 20px; }
-.bdr25 { border-radius: 25px; }
-.bdr30 { border-radius: 30px; }
-.bdr35 { border-radius: 35px; }
-.bdr40 { border-radius: 40px; }
-.bdr45 { border-radius: 45px; }
-.bdr50 { border-radius: 50px; }
-.bdr55 { border-radius: 55px; }
-.bdr60 { border-radius: 60px; }
+@for $i from 1 through 100  {
+  .bdr#{$i} {
+    border-radius: #{$i}px;
+  }
+}
 
 /* center-align */
 .text-center { text-align: center; }
@@ -864,9 +652,29 @@ hr.dashed {
 .dspb { display: block; }
 .dsp-ib { display: inline-block; }
 
+/*****************************************
+* position 設定
+******************************************/
+
 .pos-a { position: absolute; }
 .pos-r { position: relative; }
+.pos-f { position: fixed; }
 
+// important設定
+@for $i from 1 through 250  {
+  .top#{$i} {
+    top: #{$i}px !important;
+  }
+  .bottom#{$i} {
+    bottom: #{$i}px !important;
+  }
+  .left#{$i} {
+    left: #{$i}px !important;
+  }
+  .right#{$i} {
+    right: #{$i}px !important;
+  }
+}
 
 /*************************************************************
 /* 動画関連 youtube
@@ -1077,8 +885,7 @@ hr.dashed {
 }
 
 /**************************************************************
-
- レスポンシブ ミドル
+ Tablet
  768 ~ 992px
 
 **************************************************************/
@@ -1136,15 +943,13 @@ hr.dashed {
     width: 90%;
   }
 
-  .md-cwd30 {
-    width: 30%;
-  }
-  .md-cwd50 {
-    width: 50%;
-  }
-  .md-cwd60 {
-    width: 60%;
-  }
+  .md-cwd5 { width: 5%; }
+  .md-cwd10 { width: 10%; }
+  .md-cwd20 { width: 20%; }
+  .md-cwd30 { width: 30%; }
+  .md-cwd40 { width: 40%; }
+  .md-cwd50 { width: 50%; }
+  .md-cwd60 { width: 60%; }
 
   .md-pl5 { padding-left: 5px !important;}
   .md-pdb10 { padding-bottom: 10px !important; }
@@ -1271,78 +1076,49 @@ hr.dashed {
   /**************************************************************
   【paddingの設定】
   **************************************************************/
-  .sp-p0  { padding:0 !important}			/* padding-0px を指定するクラス */
-  .sp-pt0 { padding-top:0 !important}		/* padding-top0px を指定するクラス */
-  .sp-pr0 { padding-right:0 !important}	/* padding-right0px を指定するクラス */
-  .sp-pb0 { padding-bottom:0 !important}	/* padding-bottom0px を指定するクラス */
-  .sp-pl0 { padding-left:0 !important}		/* padding-left0px を指定するクラス */
 
-  .sp-p5  { padding:5px !important}
-  .sp-pt5 { padding-top:5px !important}
-  .sp-pr5 { padding-right:5px !important}
-  .sp-pb5 { padding-bottom:5px !important}
-  .sp-pl5 { padding-left:5px !important}
-
-  .sp-p10{padding:10px !important}
-  .sp-pt10{padding-top:10px !important}
-  .sp-pr10{padding-right:10px !important}
-  .sp-pb10{padding-bottom:10px !important}
-  .sp-pl10{padding-left:10px !important}
-
-
-  .sp-pl15{padding-left:15px !important}
-
-  .sp-pl20{padding-left:20px !important}
-
-  .sp-mgl0 { margin-left: 0 !important;}
-  .sp-mgl5 { margin-left: 5px !important;}
-  .sp-mgl10 { margin-left: 10px !important;}
-  .sp-mgl15 { margin-left: 15px !important;}
-  .sp-mgl20 { margin-left: 20px !important;}
-
-  .sp-mgt0 { margin-top: 0 !important; }
-  .sp-mgt5 { margin-top: 5px !important; }
-  .sp-mgt10 {  margin-top: 10px !important; }
-  .sp-mgt15 {  margin-top: 15px !important; }
-  .sp-mgt20 {  margin-top: 20px !important; }
-  .sp-mgt30 {  margin-top: 30px !important; }
-  .sp-mgt35 {  margin-top: 35px !important; }
-
-  .sp-mgb0 {  margin-bottom:  0 !important; }
-  .sp-mgb5 {  margin-bottom:  5px !important; }
-  .sp-mgb10 { margin-bottom: 10px !important; }
-  .sp-mgb15 { margin-bottom: 15px !important; }
-  .sp-mgb20 { margin-bottom: 20px !important; }
-  .sp-mgb30 { margin-bottom: 30px !important; }
-  .sp-mgb35 { margin-bottom: 35px !important; }
-  .sp-mgb40 { margin-bottom: 40px !important; }
-  .sp-mgb50 { margin-bottom: 50px !important; }
-  .sp-mgb60 { margin-bottom: 60px !important;}
-  .sp-mgb70 { margin-bottom: 70px !important;}
-  .sp-mgb80 { margin-bottom: 80px !important;}
+  /* margin */
+  //margin-size
+  @for $i from 0 through 100 {
+    .sp-mg#{$i} {
+      margin: #{$i}px !important;
+    }
+    .sp-mgl#{$i} {
+      margin-left: #{$i}px !important;
+    }
+    .sp-mgt#{$i} {
+      margin-top: #{$i}px !important;
+    }
+    .sp-mgb#{$i} {
+      margin-bottom: #{$i}px !important;
+    }
+    .sp-mgr#{$i} {
+      margin-right: #{$i}px !important;
+    }
+    .sp-p#{$i} {
+      padding: #{$i}px !important;
+    }
+    .sp-pt#{$i} {
+      padding-top: #{$i}px !important;
+    }
+    .sp-pl#{$i} {
+      padding-left: #{$i}px !important;
+    }
+    .sp-pb#{$i} {
+      padding-bottom: #{$i}px !important;
+    }
+    .sp-pr#{$i} {
+      padding-right: #{$i}px !important;
+    }
+  }
 
   /* フォントサイズ */
-  .sp-fs40{ font-size: 40px !important;}
-  .sp-fs38{ font-size: 38px !important;}
-  .sp-fs35{ font-size: 35px !important;}
-  .sp-fs32{ font-size: 32px !important;}
-  .sp-fs30{ font-size: 30px !important;}
-  .sp-fs25{ font-size: 25px !important;}
-  .sp-fs22{ font-size: 22px;line-height:1.3em;}
-  .sp-fs21{ font-size: 21px;line-height:1.3em;}
-  .sp-fs20{ font-size: 20px;line-height:1.3em;}
-  .sp-fs19{ font-size: 19px !important;line-height:1.3em;}
-  .sp-fs18{ font-size: 18px !important;line-height:1.3em;}
-  .sp-fs17{ font-size: 17px !important;line-height:1.3em;}
-  .sp-fs16{ font-size: 16px !important;line-height:1.3em;}
-  .sp-fs15{ font-size: 15px !important;}
-  .sp-fs14{ font-size: 14px !important;}
-  .sp-fs13{ font-size: 13px !important;}
-  .sp-fs12{ font-size: 12px !important;}
-  .sp-fs11{ font-size: 11px !important;}
-  .sp-fs10{ font-size: 10px !important;}
-  .sp-fs9 { font-size:  9px !important;}
-  .sp-fs8 { font-size:  8px !important;}
+  //font-size
+  @for $i from 1 through 100 {
+    .sp-fs#{$i} {
+      font-size: #{$i}px !important;
+    }
+  }
 
   .sp-lh13 { line-height: 1.3em !important;}
   .sp-lh15 { line-height: 1.5em !important;}
@@ -1355,9 +1131,9 @@ hr.dashed {
   .sp-dsn { display: none !important;}
   .sp-dsp { display: block !important; }
 
-/*************************************************************
-   sp-line-height
-*************************************************************/
+  /*************************************************************
+     sp-line-height
+  *************************************************************/
 
   .sp-lh10 { line-height: 10px; }
   .sp-lh11 { line-height: 11px; }
@@ -1391,7 +1167,7 @@ hr.dashed {
   .sp-lh39 { line-height: 39px; }
   .sp-lh40 { line-height: 40px; }
 
-/**************************************************************
-  レスポンシブ スマホ対応
-**************************************************************/
+  /**************************************************************
+    レスポンシブ スマホ対応
+  **************************************************************/
 }
