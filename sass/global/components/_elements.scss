@@ -118,21 +118,6 @@
   top: -5px;
 }
 
-/* label badge */
-.label {
-  display: inline;
-  padding: 3px 9px;
-  font-size: 11px;
-  font-weight: 700;
-  line-height: 1;
-  color: #fff;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: baseline;
-  border-radius: .25em;
-
-}
-
 .badge {
   text-shadow: none;
   font-weight: 600;
@@ -144,92 +129,62 @@
   color: #5E5E5E;
 }
 
-//TODO:label もmap-get型へ
-.label-green, .badge-green {
-  background-color: $color-green;
-  color:  #ffffff ;
+/***
+Customized Bootstrap Labels
+***/
+
+.label {
+  display: inline;
+  padding: 2px 8px;
+  font-size: 80%;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+
+  &.label-sm {
+    font-size: 13px;
+    padding: 2px 5px 2px 5px;
+  }
+
+  h1 &,
+  h2 &,
+  h3 &,
+  h4 &,
+  h5 &,
+  h6 & {
+    font-size:75%;
+  }
 }
 
-.label-blue, .badge-blue {
-  background-color: $color-blue;
-  color:  #ffffff ;
-}
-.label-success, .badge-success {
-  background-color: $color-blue-1;
-  color:  #ffffff ;
-}
-.label-important, .badge-important {
-  background-color: $color-blue-1;
-  color:  #ffffff ;
+/* Labels variants */
+@each $name, $colors in $component-colors {
+  .label-#{$name} {
+    @include label-variant(map-get($colors, base));
+  }
 }
 
-.label-yellow, .badge-yellow {
-  background-color: $color-yellow;
-  color:  #ffffff ;
-}
-.label-red, .badge-red {
-  background-color: $color-red;
-  color:  #ffffff ;
+/***
+Iconic labels
+***/
+
+.label.label-icon {
+  padding: 4px 0px 4px 4px;
+  margin-right: 2px;
+  text-align: center !important;
+
+  > i {
+    font-size: 12px;
+    text-align: center !important;
+  }
+
+  .ie8 &,
+  .ie9 & {
+    padding: 3px 0px 3px 3px;
+  }
 }
 
-.label-red-1, .badge-red-1 {
-  background-color: $color-red-1;
-  color:  #ffffff ;
-}
 
-.label-primary, .badge-primary {
-  background-color: $color-primary;
-  color:  #ffffff ;
-}
-.label-danger, .badge-danger {
-  background-color: $color-danger;
-  color:  #ffffff ;
-}
-.label-warning, .badge-warning {
-  background-color: $color-waning;
-  color:  #ffffff ;
-}
-.label-info, .badge-info {
-  background-color: $color-aqua;
-  color:  #ffffff ;
-}
-.label-inverse, .badge-inverse {
-  background-color: $color-blue;
-  color:  #ffffff ;
-}
-
-.label-gray, .badge-gray {
-  background-color: $color-gray;
-  color:  #ffffff ;
-}
-
-.label-dark, .badge-dark {
-  background-color: $color-dark;
-  color:  #ffffff ;
-}
-
-.label-dark-2, .badge-dark-2 {
-  background-color: $color-dark-2;
-  color:  #ffffff ;
-}
-
-.label-black-3, .badge-black-3 {
-  background-color: $color-dark-3;
-  color:  #ffffff ;
-}
-
-.label-black-4, .badge-black-4 {
-  background-color: $color-dark-4;
-  color:  #ffffff ;
-}
-
-.label-com-1, .badge-com-1 {
-  background-color: $color-com;
-  color:  #ffffff ;
-}
-
-.label-com-2, .badge-com-2 {
-  background-color: #e5eff9;
-  color:  $color-com ;
-  border: solid 1px $color-com;
-}

@@ -5,9 +5,13 @@
 /* Cubic Bezier Transition */
 
 @import "plugin/form/uniform/uniform.default";
-//@import "plugin/font-awesome-4.7.0/scss/font-awesome";
-@import "plugin/front-awesome/stylesheets/_font-awesome";
+@import "plugin/font-awesome-4.7.0/scss/font-awesome";
+//@import "plugin/front-awesome/stylesheets/font-awesome";
 @import "plugin/simple-line-icons/scss/simple-line-icons";
+
+//select2
+@import "plugin/select2/core";
+@import "plugin/select2-bootstrap/select2-bootstrap";
 
 /***
 Bootstrap Colorpicker

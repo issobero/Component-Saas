@@ -13,10 +13,9 @@ SmartPhone(767px以下) => スマートフォン全般
 /**********************
 * include config CSS
 ***********************/
-@import "components/config/color"; /* color */
 @import "components/config/directional"; /* directional */
 @import "components/config/variables"; /* variables */
-
+@import "components/config/custom"; /* variables */
 
 /**********************
 * include Plugin CSS
@@ -33,6 +32,7 @@ SmartPhone(767px以下) => スマートフォン全般
 @import "components/elements";  /* elements */
 @import "components/collapse";   /* toggles */
 @import "components/ribbon";   /* ribbon */
+
 
 /**********************
 * include Object CSS

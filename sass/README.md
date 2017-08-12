@@ -17,3 +17,16 @@ config.scss
 
 Responseの無効化
 
+### バージョンアップ履歴
+
+- 2017/08/13
+
+ver 1.1
+
+```
+・OOCSSをブロック化
+・AdminStyleを高速化
+・ColorのCustom定義方法を変更
+・Frontawesomeを4.7にバージョンアップ
+```
+

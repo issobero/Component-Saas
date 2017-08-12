@@ -8,20 +8,18 @@
 
 // Core Vender Css
 @import "vender/bootstrap/bootstrap";
-@import "global/boot-reset";
 
 // plugin
-@import "form/form_plugins";
+@import "plugins";
 
 // Web Components Engine
-@import "global/components/custom/fujita_custom";
 @import "global/components";
-
-// Layout Css
-@import "layouts";
 
 // Core Css
 @import "base/main";
 
+// bootstrap overwrite
+@import "global/boot-reset";
+
 // vaildation masseage css
-// @import "form/validation";
+@import "form/validation";

@@ -358,11 +358,6 @@ Custom color buttons
   border-width: 1px;
 }
 
-/* Border Buttons - Sizes */
-.btn-borders {
-  padding: 4px 12px;
-}
-
 .btn-borders.btn-lg, .btn-group-lg > .btn-borders.btn {
   padding: 8px 16px;
 }
@@ -385,23 +380,51 @@ Custom color buttons
   }
 }
 
-/* 3D Buttons */
+/* 3d Buttons */
 .btn-3d {
-  border-bottom-width: 3px;
-  padding: 5px 12px;
-  border-radius: 6px;
+  border-bottom: solid 3px rgba($color-black,.2) !important;
+  &:hover {
+    border-bottom-color: rgba($color-black,.3) !important;
+  }
 }
 
-.btn-3d.btn-lg, .btn-group-lg > .btn-3d.btn {
-  padding: 9px 16px;
+/* Inset Buttons */
+.btn-inset {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    left: 2px;
+    content: "";
+    border: solid 1px #fff;
+    border-radius: 1px;
+  }
+
+  &--rounded::before {
+    border-radius: 50px;
+  }
 }
 
-.btn-3d.btn-sm, .btn-group-sm > .btn-3d.btn {
-  border-width: 2px;
-  padding: 4px 10px;
+/* Skew Button */
+.btn-skew {
+  transform: skewX(-20deg);
+
+  &_inner {
+    transform: skewX(20deg);
+    display: block;
+  }
 }
 
-.btn-3d.btn-xs, .btn-group-xs > .btn-3d.btn {
-  padding: 1px 5px;
-  border-width: 1px;
+.btn-push {
+  box-shadow: none;
+  &:hover {
+    -moz-transform: translate(0, 3px);
+    -ms-transform: translate(0, 3px);
+    -webkit-transform: translate(0, 3px);
+    transform: translate(0, 3px);
+    box-shadow: 0 0 0 0 transparent;
+  }
 }

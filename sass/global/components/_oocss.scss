@@ -47,7 +47,7 @@ audio {
 }
 
 .alert-topics {
-  border: solid 1px $color-gray-1;
+  border: solid 1px $color-grey-1;
 }
 
 /************************************************************
@@ -107,53 +107,216 @@ hr.dashed {
   box-shadow: 0 2px 3px 2px rgba(0,0,0,.03);
   border-radius: 2px;
   background-color: $color-white;
+  &:before,&::after {
+    content: " ";
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
 }
 
 .admin-portlet-side-box {
   box-shadow: 0 2px 3px 2px rgba(0,0,0,.03);
   border-radius: 2px;
   background-color: $color-white;
+  &:before,&::after {
+    content: " ";
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
 }
 
 .white-box {
-  // box-sizing: border-box;
-  // margin: 10px;
   padding: 10px 20px;
   background-color: $color-white;
+  &:before,&::after {
+    content: " ";
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
 }
 
 .gray-body-box {
   padding: 10px 20px;
-  background-color: $color-gray-body;
+  background-color: $color-grey-body;
+  &:before,&::after {
+    content: " ";
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
 }
 
 .blue-box {
-  // border-radius: 20px;
-  // box-sizing: border-box;
-  // margin: 10px;
   padding: 10px 20px;
   color: #fff;
   background: $color-aqua;
+  &:before,&::after {
+    content: " ";
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
 }
+
+/*------------------------------------
+  Box-shadows Styles
+------------------------------------*/
+
+.u-shadow-none {
+  box-shadow: none !important;
+
+  &--focus:focus {
+    box-shadow: none !important;
+  }
+
+  &--parent-hover {
+    .g-parent:hover & {
+      box-shadow: none !important;
+    }
+  }
+}
+
+/*------------------------------------
+  Box-shadows-v1
+------------------------------------*/
+
+.u-shadow-v1 {
+  &-1 {
+    box-shadow: 0 0 5px $g-color-gray-dark-v5;
+  }
+  &-2 {
+    box-shadow: 0 0 10px $g-color-gray-dark-v5;
+
+    &--hover:hover {
+      box-shadow: 0 0 10px $g-color-gray-dark-v5;
+    }
+
+    &--hover-parent {
+      .g-parent:hover & {
+        box-shadow: 0 0 10px $g-color-gray-dark-v5;
+      }
+    }
+  }
+  &-3 {
+    box-shadow: 0 0 5px $g-color-gray-light-v3;
+  }
+  &-4 {
+    box-shadow: 0 0 5px rgba($g-color-black, .1);
+  }
+  &-5 {
+    box-shadow: 0 0 20px rgba($g-color-black, .2);
+
+    &--hover:hover {
+      box-shadow: 0 0 20px rgba($g-color-black, .2);
+    }
+
+    &--hover-parent {
+      *:hover > & {
+        box-shadow: 0 0 20px rgba($g-color-black, .2);
+      }
+    }
+  }
+  &-6 {
+    box-shadow: 0 0 10px rgba($g-color-black, .2);
+
+    &--hover:hover {
+      box-shadow: 0 0 10px rgba($g-color-black, .2);
+    }
+
+    &--hover-parent {
+      *:hover > & {
+        box-shadow: 0 0 10px rgba($g-color-black, .2);
+      }
+    }
+  }
+
+  &-7 {
+    box-shadow: 0 0 8px $g-color-gray-light-v4;
+
+    &--hover:hover {
+      box-shadow: 0 0 8px $g-color-gray-light-v4;
+    }
+
+    &--hover-parent {
+      *:hover > & {
+        box-shadow: 0 0 8px $g-color-gray-light-v4;
+      }
+    }
+  }
+}
+
+/*------------------------------------
+  Box-shadows-v2
+------------------------------------*/
+.u-shadow-v2 {
+  box-shadow: 0 10px 6px -6px rgba($g-color-black, .2);
+}
+
+/*------------------------------------
+  Box-shadows-v3-v4-v5
+------------------------------------*/
+%box-shadow {
+  position: relative;
+}
+%box-shadow--after-before {
+  content: "";
+  position: absolute;
+  top: 80%;
+  left: 5px;
+  bottom: 15px;
+  width: 50%;
+  max-width: 300px;
+  background: rgba($g-color-black, .2);
+  z-index: -1;
+}
+.u-shadow-v3,
+.u-shadow-v4,
+.u-shadow-v5 {
+  @extend %box-shadow;
+}
+.u-shadow-v3::after,
+.u-shadow-v3::before,
+.u-shadow-v4::before,
+.u-shadow-v5::after {
+  @extend %box-shadow--after-before;
+  box-shadow: 0 15px 10px rgba($g-color-black, .2);
+  transform: rotate(-3deg);
+}
+.u-shadow-v3::after,
+.u-shadow-v5::after {
+  @extend %box-shadow--after-before;
+  left: auto;
+  right: 5px;
+  transform: rotate(3deg);
+}
+
 
 .gray-box {
   padding: 10px 20px 20px 20px;
-  background-color: $color-gray;
+  background-color: $color-grey;
 }
 
 .gray-1-box {
   padding: 10px 20px 20px 20px;
-  background-color: $color-gray-1;
+  background-color: $color-grey-1;
 }
 
 .gray-2-box {
   padding: 10px 20px 20px 20px;
-  background-color: $color-gray-2;
+  background-color: $color-grey-2;
 }
 
 .gray-3-box {
   padding: 10px 20px 20px 20px;
-  background-color: $color-gray-2;
+  background-color: $color-grey-2;
 }
 
 .dark-box-1 {
@@ -271,18 +434,18 @@ hr.dashed {
 .bg-dark-5 { background: none repeat scroll 0 0 $color-dark-5; }
 
 /* color gray */
-.f-gray    { color: $color-gray; }
-.f-gray-1    { color: $color-gray-1; }
-.f-gray-2    { color: $color-gray-2; }
-.f-gray-3    { color: $color-gray-3; }
+.f-gray    { color: $color-grey; }
+.f-gray-1    { color: $color-grey-1; }
+.f-gray-2    { color: $color-grey-2; }
+.f-gray-3    { color: $color-grey-3; }
 
-.bg-gray   { background: none repeat scroll 0 0 $color-gray; }
-.bg-gray-1   { background: none repeat scroll 0 0 $color-gray-1; }
-.bg-gray-2   { background: none repeat scroll 0 0 $color-gray-2; }
-.bg-gray-3   { background: none repeat scroll 0 0 $color-gray-3; }
+.bg-gray   { background: none repeat scroll 0 0 $color-grey; }
+.bg-gray-1   { background: none repeat scroll 0 0 $color-grey-1; }
+.bg-gray-2   { background: none repeat scroll 0 0 $color-grey-2; }
+.bg-gray-3   { background: none repeat scroll 0 0 $color-grey-3; }
 
-.bg-gray-body { background: none repeat scroll 0 0 $color-gray-body; }
-.bg-gray-body-2 { background: none repeat scroll 0 0 $color-gray-body-2; }
+.bg-gray-body { background: none repeat scroll 0 0 $color-grey-body; }
+.bg-gray-body-2 { background: none repeat scroll 0 0 $color-grey-body-2; }
 
 /* color pink */
 .f-pink  { color: $color-pink; }
@@ -294,7 +457,7 @@ hr.dashed {
 .bg-pink3 { background: none repeat scroll 0 0 #f12b5b; }
 
 /* Default Color Palette 基本8色 */
-.f-red     { color: $color-red; }　
+.f-red     { color: $color-red; }
 .f-blue    { color: $color-blue; }
 .f-yellow  { color: $color-yellow; }
 .f-green   { color: $color-green; }
@@ -434,10 +597,12 @@ hr.dashed {
   .w#{$i} {
     width: #{$i}px;
   }
-  .mwd#{$i} {
+  .mw#{$i} {
     max-width: #{$i}px;
   }
 }
+
+.w1024 { width: 1024px; }
 
 .w15pct { width: 15%; }
 .w20pct { width: 20%; }
@@ -488,8 +653,33 @@ hr.dashed {
   }
 }
 
+// 250pxまで定義
+@for $i from 0 through 250 {
+  .pd#{$i}i {
+    padding: #{$i}px !important;
+  }
+  .pdt#{$i}i {
+    padding-top: #{$i}px !important;
+  }
+  .pdb#{$i}i {
+    padding-bottom: #{$i}px !important;
+  }
+  .pdr#{$i}i {
+    padding-right: #{$i}px !important;
+  }
+  .pdl#{$i}i {
+    padding-left: #{$i}px !important;
+  }
+  /* padding-height 上下高さ */
+  .pdh#{$i}i {
+    padding: #{$i}px 0 !important;
+  }
+}
+
 /* margin */
 .mg0auto  { margin: 0 auto; }
+.mgr-auto { margin-right: auto !important; }
+.mgl-auto { margin-left: auto !important; }
 
 // 250pxまで定義
 @for $i from 0 through 250 {
@@ -497,7 +687,7 @@ hr.dashed {
     margin: #{$i}px;
   }
   .mgh#{$i} {
-    margin: #{$i}px 0;
+    margin: #{$i}px;
   }
   .mgs#{$i} {
     margin: 0 #{$i}px;
@@ -516,13 +706,30 @@ hr.dashed {
   }
 }
 
-.mg0i  { margin: 0 !important; }
-
-.mgt10i { margin-top: 10px !important;}
-.mgt20i { margin-top: 20px !important;}
-
-.mgb10i { margin-bottom: 10px !important;}
-.mgb20i { margin-bottom: 20px !important;}
+// 250pxまで定義
+@for $i from 0 through 250 {
+  .mg#{$i}i {
+    margin: #{$i}px !important;
+  }
+  .mgh#{$i}i {
+    margin: #{$i}px !important;
+  }
+  .mgs#{$i}i {
+    margin: 0 #{$i}px !important;
+  }
+  .mgl#{$i}i {
+    margin-left: #{$i}px !important;
+  }
+  .mgr#{$i}i {
+    margin-right: #{$i}px !important;
+  }
+  .mgt#{$i}i {
+    margin-top: #{$i}px !important;
+  }
+  .mgb#{$i}i {
+    margin-bottom: #{$i}px !important;
+  }
+}
 
 
 /*************************************************************
@@ -565,8 +772,8 @@ hr.dashed {
 /* border: #5f6f7e
 *************************************************************/
 
-.b-gray { border: 1px solid $color-gray; }
-.b-gray-1 { border: 1px solid $color-gray-1; }
+.b-gray { border: 1px solid $color-grey; }
+.b-gray-1 { border: 1px solid $color-grey-1; }
 
 .bb-sol-green { border-bottom: 2px solid $color-green; }
 .bb-sol-pastel-green { border-bottom: 1px solid #0aa699 !important; }
@@ -582,6 +789,8 @@ hr.dashed {
 .bb-sol { border-bottom:solid 1px #ccc; }
 .bl-sol { border-left:solid 1px #ccc; }
 .br-sol { border-right:solid 1px #ccc; }
+
+.br-sol-ddd { border-right:solid 1px #ddd; }
 
 .bt-sol-black { border-top:solid 1px #5A5A5A; }
 .bb-sol-black { border-bottom:solid 1px #5A5A5A; }
@@ -640,6 +849,13 @@ hr.dashed {
 .v-top { vertical-align: top; }
 .v-middle { vertical-align: middle; }
 .v-bottom { vertical-align: bottom; }
+
+// 上下中央
+.box-center {
+  display: table-cell;
+  vertical-align: middle !important;
+  text-align: center !important;
+}
 
 .img-center { display: block;margin: 0 auto; }
 .img-wide { width: 100%;height: auto; }
@@ -708,6 +924,16 @@ hr.dashed {
 .col-reset10 {
   padding-left: 10px !important;
   padding-right: 10px !important;
+}
+
+.col-reset15 {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+.col-reset20 {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
 }
 
 .boot-pd20 {

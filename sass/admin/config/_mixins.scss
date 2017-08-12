@@ -25,9 +25,9 @@
 @mixin border-radius($radius, $important: '') {
   -webkit-border-radius: $radius#{$important};
   -moz-border-radius: $radius#{$important};
-  -ms-border-radius: $radius#{$important};  
-  -o-border-radius: $radius#{$important};      
-  border-radius: $radius#{$important}; 
+  -ms-border-radius: $radius#{$important};
+  -o-border-radius: $radius#{$important};
+  border-radius: $radius#{$important};
 }
 
 // Placeholder text
@@ -69,7 +69,7 @@
     50% {
       transform: scale($end-size);
     }
-  }  
+  }
   animation: $animation-name $duration ease 0s infinite;
 }
 
@@ -79,7 +79,7 @@
         duration: $duration;
         property: $property;
         timing-function: cubic-bezier(0.7, 1, 0.7, 1);
-    } 
+    }
 }
 
 @mixin background-opacity($color, $opacity: 0.3) {
@@ -94,7 +94,7 @@
   transform: translateY(-50%);
 }
 
-@mixin transform($degree) {  
+@mixin transform($degree) {
   webkit-transform: $degree;
   -moz-transform: $degree;
   -ms-transform: $degree;

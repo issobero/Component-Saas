@@ -3,33 +3,31 @@
 * Global layout
 *************************************************************/
 
-$color-custom: false;
-
 //## Bootstrap
 //
 // Core bootstrap variables and mixins
-@import "../global/components/config/color";
-
 @import "../vender/bootstrap/bootstrap/variables";
 @import "../vender/bootstrap/bootstrap/mixins";
 
-@import '../global/components/mixins'; // global mixings
+@import "../global/components/config/variables";
 
-@import '_variables'; // theme level variables
+@import "config/mixins";
+@import "config/variables"; // theme level variables
 
+@import 'layout/print'; // print layout
 
-@import 'layout/_print'; // print layout
+@import "layout/header"; // page header
+@import "layout/page-container"; // page main container
+@import "layout/sidebar";  // page sidebar
+@import "layout/content"; // page consnde
+@import "layout/footer";   // page footer
+@import "layout/theme-panel";  // theme customizer panel
+@import "layout/quick-sidebar";  // quick sidebar toggler
 
-@import 'layout/_header'; // page header
-@import 'layout/_page-container'; // page main container
-@import 'layout/_sidebar';  // page sidebar
-@import 'layout/_content'; // page consnde
-@import 'layout/_footer';   // page footer
-@import 'layout/_theme-panel';  // theme customizer panel
-@import 'layout/_quick-sidebar';  // quick sidebar toggler
+@import "quick-sidebar/quick-sidebar";  // quick sidebar content
+@import "quick-sidebar/quick-nav";  // quick navigation
 
-@import 'quick-sidebar/_quick-sidebar';  // quick sidebar content
-@import 'quick-sidebar/_quick-nav';  // quick navigation
+@import "layout/boot-reset";
 
 /***
 Page Loading
