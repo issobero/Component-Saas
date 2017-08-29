@@ -24,3 +24,15 @@ body {
   height: 100%;
   -webkit-font-smoothing: antialiased;
 }
+
+/*************************************************************
+/* Bootstrap override
+*************************************************************/
+.input-group-addon {
+  border: 1px solid $color-grey;
+  color: $color-grey;
+}
+
+.form-control {
+  border: 1px solid $color-grey !important;
+}

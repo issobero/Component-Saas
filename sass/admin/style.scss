@@ -6,7 +6,7 @@
 //## Bootstrap
 //
 // Core bootstrap variables and mixins
-@import "../vender/bootstrap/bootstrap/variables";
+@import "../vender/bootstrap/bootstrap/variables"; //bootstrap variables
 @import "../vender/bootstrap/bootstrap/mixins";
 
 @import "../global/components/config/variables";
@@ -28,6 +28,8 @@
 @import "quick-sidebar/quick-nav";  // quick navigation
 
 @import "layout/boot-reset";
+
+@import "layout/main_layout"; //admin layout main
 
 /***
 Page Loading

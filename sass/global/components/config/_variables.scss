@@ -9,6 +9,15 @@
 @import "color";
 
 /*******************************************
+ media
+ *******************************************/
+
+$g-sm: 576px !default; // Small devices (landscape phones, >=576 & <=767)
+$g-md: 768px !default; // Medium devices (tablets, >=768 & <=991) smart-phone
+$g-lg: 992px !default; // Large devices (desktops, >=992 & <=1199) tablet
+$g-xl: 1200px !default; // Extra large devices (large desktops, >=1200)
+
+/*******************************************
  TYPOGRAPHY
  *******************************************/
 

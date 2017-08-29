@@ -129,6 +129,20 @@ hr.dashed {
   }
 }
 
+.admin-portlet-image-box {
+  padding: 12px 0 15px;
+  box-shadow: 0 2px 3px 2px rgba(0,0,0,.03);
+  border-radius: 2px;
+  background-color: $color-white;
+  &:before,&::after {
+    content: " ";
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
+}
+
 .white-box {
   padding: 10px 20px;
   background-color: $color-white;
@@ -165,6 +179,13 @@ hr.dashed {
     clear: both;
   }
 }
+
+.name-box {
+  margin: 10px 0;
+  padding: 5px;
+  box-shadow: 0 1px 5px 0 #dde5ee;
+}
+
 
 /*------------------------------------
   Box-shadows Styles
@@ -463,6 +484,7 @@ hr.dashed {
 .f-green   { color: $color-green; }
 .f-emerald { color: $color-emerald; }
 .f-purple  { color: $color-purple; }
+.f-blue-com { color: $color-com; }
 
 .f-blue-ws { color: $color-blue-ws; }
 .bg-blue-ws { color: $color-blue-ws; }
@@ -687,7 +709,7 @@ hr.dashed {
     margin: #{$i}px;
   }
   .mgh#{$i} {
-    margin: #{$i}px;
+    margin: #{$i}px 0;
   }
   .mgs#{$i} {
     margin: 0 #{$i}px;
@@ -796,6 +818,8 @@ hr.dashed {
 .bb-sol-black { border-bottom:solid 1px #5A5A5A; }
 .bl-sol-black { border-left:solid 1px #5A5A5A; }
 .br-sol-black { border-right:solid 1px #5A5A5A; }
+
+.bb-sol-dadada { border-bottom: 1px #DADADA;}
 
 .bt-dot { border-top:dotted 1px #ccc; }
 .bb-dot { border-bottom:dotted 1px #ccc; }
@@ -1112,10 +1136,9 @@ hr.dashed {
 
 /**************************************************************
  Tablet
- 768 ~ 992px
-
+ 768 ~ 1200px
 **************************************************************/
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: $g-xl) {
 
   .md-dsn { display: none !important;}
   .md-dsp { display: block !important; }
@@ -1183,17 +1206,36 @@ hr.dashed {
   /* md margin 系*/
   .md-mt8 { margin-top: 8px; }
   .md-mt10 { margin-top: 10px; }
-  .md-fs25 { font-size: 25px; }
-  .md-fs14 { font-size: 14px; }
-  .md-fs12 { font-size: 12px; }
-  .md-fs11 { font-size: 11px; }
+
+  /* フォントサイズ */
+  //font-size
+  @for $i from 1 through 100 {
+    .md-fs#{$i} {
+      font-size: #{$i}px !important;
+    }
+  }
+
+  // width
+  @for $i from 0 through 200 {
+    .md-w#{$i * 5} {
+      width: #{$i * 5}px;
+    }
+    .md-mw#{$i * 5} {
+      max-width: #{$i * 5}px;
+    }
+  }
+
+  .md-w11 { width: 11px; }
+  .md-w12 { width: 12px; }
+  .md-w13 { width: 13px; }
+  .md-w14 { width: 14px; }
 
 }
 
 /**************************************************************
  Response SmartPhone
 **************************************************************/
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: $g-md) {
 
   /**************************************************************
   タイトル関連
