@@ -428,3 +428,102 @@ Custom color buttons
     box-shadow: 0 0 0 0 transparent;
   }
 }
+
+/* icon-btn long */
+.icon-btn-lg {
+  background-color: #f2f3f8 !important;
+  background-image: none;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 3px 2px rgba(0,0,0,.03);
+  cursor: pointer;
+  display: inline-block;
+  height: 80px;
+  width: 100px;
+  margin: 0 8px 0 0;
+  /* min-width: 100px; */
+  padding: 15px 0 0;
+  position: relative;
+  text-align: center;
+  text-shadow: none;
+  transition: all 0.3s ease 0s;
+}
+
+.icon-btn-lg > .badge {
+  border-radius: 12px;
+  border-style: solid;
+  border-width: 0;
+  box-shadow: none;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 300;
+  padding: 3px 6px;
+  position: absolute;
+  right: -5px;
+  text-shadow: none;
+  top: -5px;
+}
+
+.icon-btn-lg p {
+  padding: 5px 0 0 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.icon-btn-lg:hover {
+  -moz-transform: translate(0, 3px);
+  -ms-transform: translate(0, 3px);
+  -webkit-transform: translate(0, 3px);
+  transform: translate(0, 3px);
+  box-shadow: 0 0 0 0 transparent;
+}
+
+/* icon-btn long */
+.icon-btn-xlg {
+  background-color: #f2f3f8 !important;
+  background-image: none;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 3px 2px rgba(0,0,0,.03);
+  cursor: pointer;
+  display: inline-block;
+  height: 100px;
+  width: 120px;
+  margin: 0 8px 0 0;
+  /* min-width: 100px; */
+  padding: 15px 0 0;
+  position: relative;
+  text-align: center;
+  text-shadow: none;
+  transition: all 0.3s ease 0s;
+}
+
+.icon-btn-xlg > .badge {
+  border-radius: 12px;
+  border-style: solid;
+  border-width: 0;
+  box-shadow: none;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 300;
+  padding: 3px 6px;
+  position: absolute;
+  right: -5px;
+  text-shadow: none;
+  top: -5px;
+}
+
+.icon-btn-xlg p {
+  padding: 5px 0 0 0;
+  font-size: 14px;
+  font-weight: bold;
+  height: 50px;
+}
+
+.icon-btn-xlg:hover {
+  -moz-transform: translate(0, 3px);
+  -ms-transform: translate(0, 3px);
+  -webkit-transform: translate(0, 3px);
+  transform: translate(0, 3px);
+  box-shadow: 0 0 0 0 transparent;
+}
