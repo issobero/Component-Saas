@@ -167,6 +167,18 @@ hr.dashed {
   }
 }
 
+.side-gray-body-box-2 {
+  padding: 10px 5px;
+  background-color: $color-grey-body-2;
+  &:before,&::after {
+    content: " ";
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
+}
+
 .blue-box {
   padding: 10px 20px;
   color: #fff;
@@ -378,35 +390,26 @@ hr.dashed {
 /**************************************************************
  * 画像サイズ関連
 **************************************************************/
-/* 50%画像 */
-.img-50  {
-  display: block;
-  height: auto;
-  max-width: 50%;
-}
-/* 25%画像 */
-.img-25  {
-  display: block;
-  height: auto;
-  max-width: 25%;
-}
-/* 75%画像 */
-.img-75  {
-  display: block;
-  height: auto;
-  max-width: 75%;
+
+@for $i from 1 through 100 {
+  .img-#{$i} {
+    display: block;
+    height: auto;
+    max-width: 0% + $i;
+  }
 }
 
 /************************************************************
  * animete ディレイ関係
  ************************************************************/
-.animed300  { animation-delay: 300ms; }
-.animed600  { animation-delay: 600ms; }
-.animed900  { animation-delay: 900ms; }
-.animed1200 { animation-delay: 1200ms; }
-.animed2000 { animation-delay: 1600ms; }
-.animed2000 { animation-delay: 2000ms; }
-.animed3200 { animation-delay: 3200ms; }
+@for $i from 1 through 500 {
+  .animed-#{$i * 10} {
+    animation-delay: #{$i * 10}px;
+  }
+  .animed-#{$i * 10}-i {
+    animation-delay: #{$i * 10}px !important;
+  }
+}
 
 .opa-10 { opacity: 1.0; }
 .opa-08 { opacity: 0.8; }

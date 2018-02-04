@@ -3,11 +3,9 @@
 // Core Font
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700');
 
-// Core variables
-@import "compass";
-
 // Core Vender Css
 @import "vender/bootstrap/bootstrap";
+@import "vender/bourbon/bourbon";
 
 // plugin
 @import "plugins";
