@@ -4,24 +4,54 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700');
 
 // Core Vender Css
-@import "vender/bootstrap/bootstrap";
-@import "vender/bourbon/bourbon";
+// bootstrap4 - alpha.6
+@import "vender/bootstrap4/bootstrap";
+@import "vender/bootstrap4/bootstrap-grid";
+@import "vender/bootstrap4/bootstrap-reboot";
+@import "vender/bourbon4/bourbon";
 
 // plugin
-@import "plugins";
+@import "plugins/fontawesome-5.0.8/scss/fontawesome";
+@import "plugins/fontawesome-5.0.8/scss/fa-solid";
+@import "plugins/fontawesome-5.0.8/scss/fa-regular";
+@import "plugins/fontawesome-5.0.8/scss/fa-brands";
+@import "plugins/simple-line-icons/scss/simple-line-icons";
 
 // Web Components Engine
 @import "global/components";
 
 // Core Css
-@import "base/main";
-
-// bootstrap overwrite
-@import "global/boot-reset";
+@import "core/core_base";
+@import "core/layouts_base";
+@import "core/helpers";
 
 // vaildation masseage css
 @import "form/validation";
 
-// layout
+// bootstrap overwrite
+@import "global/boot-reset";
+
+// layout structure
+@import "layouts/structure/topbar";
+@import "layouts/structure/sliders";
+@import "layouts/structure/header";
+
+// layout parts
+@import "layouts/content";
+@import "layouts/pagetitle";
 @import "layouts/blog";
 @import "layouts/portfolio";
+@import "layouts/shop";
+@import "layouts/events";
+
+// layout footer
+@import "layouts/structure/footer";
+
+// plugins
+@import "plugins/magnific-popup";
+
+// layouts responsive
+@import "layouts/responsive";
+
+// include Object CSS
+@import "global/components/oocss"; /* oocss */

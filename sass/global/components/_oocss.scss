@@ -68,8 +68,9 @@ hr {
   background-image: linear-gradient(to right, transparent, #ffffff, transparent);
   border: 0 none;
   height: 1px;
-  margin: 5px 0;
+  margin: 20px;
 }
+
 hr.short {
   margin: 10px 0;
 }
@@ -95,8 +96,13 @@ hr.dashed {
  ************************************************************/
 .fl { float: left; }
 .fr { float: right;}
-.fn { float: none !important;}
+.fn { float: none;}
 .cb { clear: both; }
+
+.fl-i { float: left !important; }
+.fr-i { float: right !important;}
+.fn-i { float: none !important;}
+.cb-i { clear: both !important; }
 
 /**************************************************************
  * box
@@ -191,6 +197,15 @@ hr.dashed {
     clear: both;
   }
 }
+
+.news-red-box {
+  border: 1px solid $color-pink;
+  display: block;
+  margin: 15px 0 0;
+  border-radius: 2px;
+  padding: 12px 10px;
+}
+
 
 .name-box {
   margin: 10px 0;
@@ -388,9 +403,24 @@ hr.dashed {
 }
 
 /**************************************************************
- * 画像サイズ関連
+ * h1 h2 h3 h4 title 集
 **************************************************************/
 
+.h-title-1 {
+  padding: 10px;
+  line-height: 1.4;
+  font-size: 20px;
+  font-weight: 600;
+  background: #263238;
+  color: #fff;
+  @media (max-width: 767px) {
+    font-size: 14px;
+  }
+}
+
+/**************************************************************
+ * 画像サイズ関連
+**************************************************************/
 @for $i from 1 through 100 {
   .img-#{$i} {
     display: block;
@@ -404,10 +434,10 @@ hr.dashed {
  ************************************************************/
 @for $i from 1 through 500 {
   .animed-#{$i * 10} {
-    animation-delay: #{$i * 10}px;
+    animation-delay: #{$i * 10}ms;
   }
   .animed-#{$i * 10}-i {
-    animation-delay: #{$i * 10}px !important;
+    animation-delay: #{$i * 10}ms !important;
   }
 }
 
@@ -423,133 +453,28 @@ hr.dashed {
 * font background Color Palette
 ************************************************************/
 
-/* Standard Color */
-.f-white  { color: $color-white; }
-.bg-white { background: none repeat scroll 0 0 $color-white; }
+// background
+// Example => .bg-black
+@each $name, $colors in $component-colors {
+  .bg-#{$name} {
+    background: none repeat scroll 0 0 map-get($colors, base);
+  }
+  .bg-#{$name}-i {
+    background: none repeat scroll 0 0 map-get($colors, base) !important;
+  }
+  // linear-gradient
+  .bg-gra-l-#{$name} {
+    background: rgba(0, 0, 0, 0) radial-gradient(circle farthest-side, map-get($colors, base), map-get($colors, font) 100%, map-get($colors, base) 75%, map-get($colors, font))repeat scroll 0 0 / 4px 4px;
+  }
+}
 
-/* color black */
-.f-black   { color: $color-black;   }
-.f-black-1 { color: $color-black-1; }
-.f-black-2 { color: $color-black-2; }
-.f-black-3 { color: $color-black-3; }
-.f-black-4 { color: $color-black-4; }
-.f-black-5 { color: $color-black-5; }
-
-.bg-black   { background: none repeat scroll 0 0 $color-black; }
-.bg-black-1 { background: none repeat scroll 0 0 $color-black-1; }
-.bg-black-2 { background: none repeat scroll 0 0 $color-black-2; }
-.bg-black-3 { background: none repeat scroll 0 0 $color-black-3; }
-.bg-black-4 { background: none repeat scroll 0 0 $color-black-4; }
-.bg-black-5 { background: none repeat scroll 0 0 $color-black-5; }
-
-/* color dark */
-.f-dark   { color: $color-dark;   }
-.f-dark-1 { color: $color-dark-1; }
-.f-dark-2 { color: $color-dark-2; }
-.f-dark-3 { color: $color-dark-3; }
-.f-dark-4 { color: $color-dark-4; }
-.f-dark-5 { color: $color-dark-5; }
-
-.bg-dark   { background: none repeat scroll 0 0 $color-dark; }
-.bg-dark-1 { background: none repeat scroll 0 0 $color-dark-1; }
-.bg-dark-2 { background: none repeat scroll 0 0 $color-dark-2; }
-.bg-dark-3 { background: none repeat scroll 0 0 $color-dark-3; }
-.bg-dark-4 { background: none repeat scroll 0 0 $color-dark-4; }
-.bg-dark-5 { background: none repeat scroll 0 0 $color-dark-5; }
-
-/* color gray */
-.f-gray    { color: $color-grey; }
-.f-gray-1    { color: $color-grey-1; }
-.f-gray-2    { color: $color-grey-2; }
-.f-gray-3    { color: $color-grey-3; }
-
-.bg-gray   { background: none repeat scroll 0 0 $color-grey; }
-.bg-gray-1   { background: none repeat scroll 0 0 $color-grey-1; }
-.bg-gray-2   { background: none repeat scroll 0 0 $color-grey-2; }
-.bg-gray-3   { background: none repeat scroll 0 0 $color-grey-3; }
-
-.bg-gray-body { background: none repeat scroll 0 0 $color-grey-body; }
-.bg-gray-body-2 { background: none repeat scroll 0 0 $color-grey-body-2; }
-
-/* color pink */
-.f-pink  { color: $color-pink; }
-.f-pink2 { color: #ff4574; }
-.f-pink3 { color: #f12b5b; }
-
-.bg-pink { background: none repeat scroll 0 0 $color-pink; }
-.bg-pink2 { background: none repeat scroll 0 0 #ff4574; }
-.bg-pink3 { background: none repeat scroll 0 0 #f12b5b; }
-
-/* Default Color Palette 基本8色 */
-.f-red     { color: $color-red; }
-.f-blue    { color: $color-blue; }
-.f-yellow  { color: $color-yellow; }
-.f-green   { color: $color-green; }
-.f-emerald { color: $color-emerald; }
-.f-purple  { color: $color-purple; }
-.f-blue-com { color: $color-com; }
-
-.f-blue-ws { color: $color-blue-ws; }
-.bg-blue-ws { color: $color-blue-ws; }
-
-.bg-red    　{ background: none repeat scroll 0 0 $color-red; }
-.bg-blue   　{ background: none repeat scroll 0 0 $color-blue; }
-.bg-yellow 　{ background: none repeat scroll 0 0 $color-yellow; }
-.bg-green  　{ background: none repeat scroll 0 0 $color-green; }
-.bg-emerald　{ background: none repeat scroll 0 0 $color-emerald; }
-.bg-purple 　{ background: none repeat scroll 0 0 $color-purple; }
-
-/* Pastel Color Palette 基本8色 */
-.f-green-Pastel  { color: #19b3a5; }
-.f-red-Pastel    { color: #EB6D73; }
-.f-yellow-Pastel { color: #F9E642; }
-.f-blue-Pastel   { color: #006A97; }
-.f-aqua-Pastel   { color: #67BFD7; }
-
-.bg-green-Pastel  { background: none repeat scroll 0 0 #19b3a5;}
-.bg-red-Pastel    { background: none repeat scroll 0 0 #EB6D73;}
-.bg-yellow-Pastel { background: none repeat scroll 0 0 #F9E642;}
-.bg-blue-Pastel   { background: none repeat scroll 0 0 #006A97;}
-.bg-aqua-Pastel   { background: none repeat scroll 0 0 #67BFD7;}
-
-/* Color Palette 2 基本8色 */
-.f-green2   { color: #3dbda3; }
-.f-aqua2    { color: #e0f8fa; }
-.f-blue2    { color: #5ba5d6; }
-.f-red2     { color: #ff7e7e; }
-.f-purple2  { color: #9a78c0; }
-.f-yellow2  { color: #ffbe71; }
-.f-gray2    { color: #f6f6f6; }
-
-.bg-green2  { background: none repeat scroll 0 0 #3dbda3; }
-.bg-aqua2   { background: none repeat scroll 0 0 #e0f8fa; }
-.bg-red2    { background: none repeat scroll 0 0 #ff7e7e; }
-.bg-yellow2 { background: none repeat scroll 0 0 #ffbe71; }
-.bg-blue2   { background: none repeat scroll 0 0 #5ba5d6; }
-.bg-gray2   { background: none repeat scroll 0 0 #f6f6f6; }
-.bg-purple2 { background: none repeat scroll 0 0 #9a78c0; }
-
-/* Color Palette 3 */
-.f-blue3   { color: #4a69e6; }
-.f-green3  { color: #64d9cf; }
-.f-red3    { color: #EB305E; }
-.f-aqua3   { color: #e0f8fa; }
-.f-gray3   { color: #f1f1f1; }
-
-.bg-blue3   { background: none repeat scroll 0 0 #4a69e6; }
-.bg-green3  { background: none repeat scroll 0 0 #64d9cf; }
-.bg-aqua3   { background: none repeat scroll 0 0 #e0f8fa; }
-.bg-red3    { background: none repeat scroll 0 0 #EB305E; }
-.bg-gray3   { background: none repeat scroll 0 0 #f1f1f1; }
-
-/* background-linear-gradient */
-.bg-gra-l-red { background: rgba(0, 0, 0, 0) radial-gradient(circle farthest-side, $color-red-1, #FFF 100%, $color-red-1 75%, #FFF)repeat scroll 0 0 / 4px 4px; }
-.bg-gra-l-red-1 {background: rgba(0, 0, 0, 0) radial-gradient(circle farthest-side, #ECAEAE, #FFF 100%, #ECAEAE 75%, #FFF)repeat scroll 0 0 / 4px 4px;}
-
-.bg-gra-l-blue { background: rgba(0, 0, 0, 0) radial-gradient(circle farthest-side, $color-blue-1, #FFF 100%, $color-blue-1 75%, #FFF)repeat scroll 0 0 / 4px 4px; }
-.bg-gra-l-yellow { background: rgba(0, 0, 0, 0) radial-gradient(circle farthest-side, $color-yellow-1, #FFF 100%, $color-yellow-1 75%, #FFF)repeat scroll 0 0 / 4px 4px; }
-.bg-gra-l-green { background: rgba(0, 0, 0, 0) radial-gradient(circle farthest-side, $color-green-1, #FFF 100%, $color-green-1 75%, #FFF)repeat scroll 0 0 / 4px 4px; }
-
+// font-color
+// Example => .f-white
+@each $name, $colors in $component-colors {
+  .f-#{$name} {
+    color: map-get($colors, base);
+  }
+}
 
 /************************************************************
 * General typography
@@ -561,29 +486,82 @@ hr.dashed {
 .tdo { text-decoration: overline; }
 .tdl { text-decoration: line-through; }
 
-.top10 { top:10px; }
-.top20 { top:20px; }
-.top30 { top:30px; }
-.top40 { top:40px; }
-.top50 { top:50px; }
-.top60 { top:60px; }
+/************************************************************
+* vertical-align
+************************************************************/
 
-.left50 { left: 50%; }
+.td-top { vertical-align: top; }
+.td-top-i { vertical-align: top !important;}
+.td-bottom { vertical-align: bottom; }
+.td-bottom-i { vertical-align: bottom !important;}
+.td-vm { vertical-align: middle; }
+.td-vm-i { vertical-align: middle !important; }
 
-.td-vm { vertical-align: middle !important; }
+/************************************************************
+* position
+************************************************************/
+
+//top
+@for $i from 1 through 100 {
+  .top-#{$i} {
+    top: #{$i}px;
+  }
+  .top-#{$i}-i {
+    top: #{$i}px !important;
+  }
+}
+
+//left
+@for $i from 1 through 100 {
+  .left-#{$i} {
+    left: #{$i}px;
+  }
+  .left-#{$i}-i {
+    left: #{$i}px !important;
+  }
+}
+
+//right
+@for $i from 1 through 100 {
+  .right-#{$i} {
+    right: #{$i}px;
+  }
+  .right-#{$i}-i {
+    right: #{$i}px !important;
+  }
+}
+
+//bottom
+@for $i from 1 through 100 {
+  .bottom-#{$i} {
+    bottom: #{$i}px;
+  }
+  .bottom-#{$i}-i {
+    bottom: #{$i}px !important;
+  }
+}
 
 /************************************************************
 * font-size
 ************************************************************/
 
-
-//font-size
 @for $i from 1 through 100 {
-  .fs#{$i} {
+  .fs-#{$i} {
     font-size: #{$i}px;
   }
-  .fs#{$i}i {
+  .fs-#{$i}-i {
     font-size: #{$i}px !important;
+  }
+}
+
+@media #{$sp} {
+  @for $i from 1 through 100 {
+    .sp-fs-#{$i} {
+      font-size: #{$i}px;
+    }
+    .sp-fs-#{$i}-i {
+      font-size: #{$i}px !important;
+    }
   }
 }
 
@@ -603,40 +581,71 @@ hr.dashed {
 * letter-spacing
 ******************************************/
 
-.lp1 { letter-spacing: 1px;}
-.lp2 { letter-spacing: 2px;}
-.lp3 { letter-spacing: 3px;}
-.lp4 { letter-spacing: 4px;}
-.lp5 { letter-spacing: 5px;}
-.lp6 { letter-spacing: 6px;}
-.lp7 { letter-spacing: 7px;}
-.lp8 { letter-spacing: 8px;}
-.lp9 { letter-spacing: 9px;}
-.lp10 { letter-spacing: 10px;}
+@for $i from 1 through 10 {
 
+  .lp-#{$i} {
+    letter-spacing: #{$i}px;
+  }
+}
 
 /*****************************************
 * width設定
 ******************************************/
 
-@for $i from 1 through 1000 {
-  .w#{$i} {
-    width: #{$i}px;
-  }
-  .mw#{$i} {
-    max-width: #{$i}px;
+@for $i from 1 through 100 {
+  .w-#{$i}-p {
+    width: percentage($i/100);
   }
 }
 
-.w1024 { width: 1024px; }
+@for $i from 1 through 750 {
+  .w-#{$i} {
+    width: #{$i}px;
+  }
+  .w-#{$i}-i {
+    width: #{$i}px !important;
+  }
+  .max-w-#{$i} {
+    max-width: #{$i}px;
+  }
+  .max-w-#{$i} {
+    max-width: #{$i}px !important;
+  }
+  .min-w-#{$i} {
+    min-width: #{$i}px;
+  }
+  .min-w-#{$i} {
+    min-width: #{$i}px !important;
+  }
+}
 
-.w15pct { width: 15%; }
-.w20pct { width: 20%; }
-.w25pct { width: 25%; }
-.w30pct { width: 30%; }
-.w80pct { width: 80%; }
-.w100pct{ width: 100%; }
+@media #{$sp} {
+  // パーセント
+  @for $i from 1 through 100 {
+    .sp-w-#{$i}-p {
+      width: percentage($i/100);
+    }
+  }
+  @for $i from 1 through 1000 {
+    .sp-w-#{$i} {
+      width: #{$i}px;
+    }
+    .sp-w-#{$i}-i {
+      width: #{$i}px !important;
+    }
+    .sp-mw-#{$i} {
+      max-width: #{$i}px;
+    }
+    .sp-mw-#{$i} {
+      max-width: #{$i}px !important;
+    }
+  }
+}
 
+.w-768 { width: 768px; }
+.w-950 { width: 950px; }
+.w-960 { width: 960px; }
+.w-1024 { width: 1024px; }
 
 /************************************************************
 * height
@@ -646,10 +655,25 @@ hr.dashed {
 // example
 // ht120 => height: 120px;
 @for $i from 1 through 1000 {
-  .ht#{$i} {
+  .ht-#{$i} {
     height: #{$i}px;
   }
+  .ht-#{$i}-i {
+    height: #{$i}px !important;
+  }
 }
+
+@media #{$sp} {
+  @for $i from 1 through 1000 {
+    .sp-ht-#{$i} {
+      height: #{$i}px;
+    }
+    .sp-ht-#{$i}-i {
+      height: #{$i}px !important;
+    }
+  }
+}
+
 
 /************************************************************
  * bootstrap padding
@@ -658,145 +682,222 @@ hr.dashed {
 
 // 250pxまで定義
 @for $i from 0 through 250 {
-  .pd#{$i} {
+  .pd-#{$i} {
     padding: #{$i}px;
   }
-  .pdt#{$i} {
+  .pd-#{$i}-i {
+    padding: #{$i}px !important;
+  }
+  .pdt-#{$i} {
     padding-top: #{$i}px;
   }
-  .pdb#{$i} {
+  .pdt-#{$i}-i {
+    padding-top: #{$i}px !important;
+  }
+  .pdb-#{$i} {
     padding-bottom: #{$i}px;
   }
-  .pdr#{$i} {
+  .pdb-#{$i}-i {
+    padding-bottom: #{$i}px !important;
+  }
+  .pdr-#{$i} {
     padding-right: #{$i}px;
   }
-  .pdl#{$i} {
+  .pdr-#{$i}-i {
+    padding-right: #{$i}px !important;
+  }
+  .pdl-#{$i} {
     padding-left: #{$i}px;
   }
-  /* padding-height 上下高さ */
-  .pdh#{$i} {
+  .pdl-#{$i}-i {
+    padding-left: #{$i}px !important;
+  }
+  .pdh-#{$i} {
     padding: #{$i}px 0;
+  }
+  .pdh-#{$i}-i {
+    padding: #{$i}px 0 !important;
+  }
+  .pds-#{$i} {
+    padding: 0 #{$i}px;
+  }
+  .pds-#{$i}-i {
+    padding: 0 #{$i}px !important;
   }
 }
 
-// 250pxまで定義
-@for $i from 0 through 250 {
-  .pd#{$i}i {
-    padding: #{$i}px !important;
-  }
-  .pdt#{$i}i {
-    padding-top: #{$i}px !important;
-  }
-  .pdb#{$i}i {
-    padding-bottom: #{$i}px !important;
-  }
-  .pdr#{$i}i {
-    padding-right: #{$i}px !important;
-  }
-  .pdl#{$i}i {
-    padding-left: #{$i}px !important;
-  }
-  /* padding-height 上下高さ */
-  .pdh#{$i}i {
-    padding: #{$i}px 0 !important;
+@media #{$sp} {
+  @for $i from 0 through 250 {
+    .sp-pd-#{$i} {
+      padding: #{$i}px;
+    }
+    .sp-pd-#{$i}-i {
+      padding: #{$i}px !important;
+    }
+    .sp-pdt-#{$i} {
+      padding-top: #{$i}px;
+    }
+    .sp-pdt-#{$i}-i {
+      padding-top: #{$i}px !important;
+    }
+    .sp-pdb-#{$i} {
+      padding-bottom: #{$i}px;
+    }
+    .sp-pdb-#{$i}-i {
+      padding-bottom: #{$i}px !important;
+    }
+    .sp-pdr-#{$i} {
+      padding-right: #{$i}px;
+    }
+    .sp-pdr-#{$i}-i {
+      padding-right: #{$i}px !important;
+    }
+    .sp-pdl-#{$i} {
+      padding-left: #{$i}px;
+    }
+    .sp-pdl-#{$i}-i {
+      padding-left: #{$i}px !important;
+    }
+    /* padding-height 上下高さ */
+    .sp-pdh-#{$i} {
+      padding: #{$i}px 0;
+    }
+    .sp-pdh-#{$i}-i {
+      padding: #{$i}px 0 !important;
+    }
+    .sp-pds-#{$i} {
+      padding: 0 #{$i}px;
+    }
+    .sp-pds-#{$i}-i {
+      padding: 0 #{$i}px !important;
+    }
   }
 }
 
 /* margin */
-.mg0auto  { margin: 0 auto; }
-.mgr-auto { margin-right: auto !important; }
-.mgl-auto { margin-left: auto !important; }
+.mg-0-auto  { margin: 0 auto; }
+.mg-r-auto { margin-right: auto !important; }
+.mg-l-auto { margin-left: auto !important; }
 
 // 250pxまで定義
 @for $i from 0 through 250 {
-  .mg#{$i} {
+  .mg-#{$i} {
     margin: #{$i}px;
   }
-  .mgh#{$i} {
+  .mg-#{$i}-i {
+    margin: #{$i}px !important;
+  }
+  .mgh-#{$i} {
     margin: #{$i}px 0;
   }
-  .mgs#{$i} {
+  .mgh-#{$i}-i {
+    margin: #{$i}px !important;
+  }
+  .mgs-#{$i} {
     margin: 0 #{$i}px;
   }
-  .mgl#{$i} {
-    margin-left: #{$i}px;
-  }
-  .mgr#{$i} {
-    margin-right: #{$i}px;
-  }
-  .mgt#{$i} {
-    margin-top: #{$i}px;
-  }
-  .mgb#{$i} {
-    margin-bottom: #{$i}px;
-  }
-}
-
-// 250pxまで定義
-@for $i from 0 through 250 {
-  .mg#{$i}i {
-    margin: #{$i}px !important;
-  }
-  .mgh#{$i}i {
-    margin: #{$i}px !important;
-  }
-  .mgs#{$i}i {
+  .mgs-#{$i}-i {
     margin: 0 #{$i}px !important;
   }
-  .mgl#{$i}i {
+  .mgl-#{$i} {
+    margin-left: #{$i}px;
+  }
+  .mgl-#{$i}-i {
     margin-left: #{$i}px !important;
   }
-  .mgr#{$i}i {
+  .mgr-#{$i} {
+    margin-right: #{$i}px;
+  }
+  .mgr-#{$i}-i {
     margin-right: #{$i}px !important;
   }
-  .mgt#{$i}i {
+  .mgt-#{$i} {
+    margin-top: #{$i}px;
+  }
+  .mgt-#{$i}-i {
     margin-top: #{$i}px !important;
   }
-  .mgb#{$i}i {
+  .mgb-#{$i} {
+    margin-bottom: #{$i}px;
+  }
+  .mgb-#{$i}-i {
     margin-bottom: #{$i}px !important;
   }
 }
 
+@media #{$sp} {
+  @for $i from 0 through 250 {
+    .sp-mg-#{$i} {
+      margin: #{$i}px;
+    }
+    .sp-mg-#{$i}-i {
+      margin: #{$i}px !important;
+    }
+    .sp-mgh-#{$i} {
+      margin: #{$i}px 0;
+    }
+    .sp-mgh-#{$i}-i {
+      margin: #{$i}px !important;
+    }
+    .sp-mgs-#{$i} {
+      margin: 0 #{$i}px;
+    }
+    .sp-mgs-#{$i}-i {
+      margin: 0 #{$i}px !important;
+    }
+    .sp-mgl-#{$i} {
+      margin-left: #{$i}px;
+    }
+    .sp-mgl-#{$i}-i {
+      margin-left: #{$i}px !important;
+    }
+    .sp-mgr-#{$i} {
+      margin-right: #{$i}px;
+    }
+    .sp-mgr-#{$i}-i {
+      margin-right: #{$i}px !important;
+    }
+    .sp-mgt-#{$i} {
+      margin-top: #{$i}px;
+    }
+    .sp-mgt-#{$i}-i {
+      margin-top: #{$i}px !important;
+    }
+    .sp-mgb-#{$i} {
+      margin-bottom: #{$i}px;
+    }
+    .sp-mgb-#{$i}-i {
+      margin-bottom: #{$i}px !important;
+    }
+  }
+}
 
 /*************************************************************
    line-height 行間関係
 *************************************************************/
 
-.lh10 { line-height: 10px; }
-.lh11 { line-height: 11px; }
-.lh12 { line-height: 12px; }
-.lh13 { line-height: 13px; }
-.lh14 { line-height: 14px; }
-.lh15 { line-height: 15px; }
-.lh16 { line-height: 16px; }
-.lh17 { line-height: 17px; }
-.lh18 { line-height: 18px; }
-.lh19 { line-height: 19px; }
-.lh20 { line-height: 20px; }
-.lh21 { line-height: 21px; }
-.lh22 { line-height: 22px; }
-.lh23 { line-height: 23px; }
-.lh24 { line-height: 24px; }
-.lh25 { line-height: 25px; }
-.lh26 { line-height: 26px; }
-.lh27 { line-height: 27px; }
-.lh28 { line-height: 28px; }
-.lh29 { line-height: 29px; }
-.lh30 { line-height: 30px; }
-.lh31 { line-height: 31px; }
-.lh32 { line-height: 32px; }
-.lh33 { line-height: 33px; }
-.lh34 { line-height: 34px; }
-.lh35 { line-height: 35px; }
-.lh36 { line-height: 36px; }
-.lh37 { line-height: 37px; }
-.lh38 { line-height: 38px; }
-.lh39 { line-height: 39px; }
-.lh40 { line-height: 40px; }
+@for $i from 0 through 30 {
+  .lh-#{$i} {
+    line-height: #{$i}px !important;
+  }
+  .lh-#{$i}-i {
+    line-height: #{$i}px !important;
+  }
+}
+
+@for $i from 1 through 50 {
+  .sp-lh-#{$i} {
+    line-height: #{$i}px;
+  }
+  .sp-lh-#{$i}-i {
+    line-height: #{$i}px !important;
+  }
+}
 
 /*************************************************************
-/* border: #5f6f7e
+/* border: 関連 map-get方式
 *************************************************************/
+
 
 .b-gray { border: 1px solid $color-grey; }
 .b-gray-1 { border: 1px solid $color-grey-1; }
@@ -836,6 +937,11 @@ hr.dashed {
 .bt-sol-pastel-green { border-top: 4px solid #0aa699; }
 
 /* text pick up: 4px 8px; */
+.bl-sol-pick {
+  border-left: 3px solid $theme-color;
+  padding: 4px 8px;
+}
+
 .bl-sol-pick-666 {
   border-left: 3px solid #666;
   padding: 4px 8px;
@@ -933,6 +1039,7 @@ hr.dashed {
   padding-bottom: 50%;
   overflow: hidden;
 }
+
 .youtube iframe {
   position: absolute;
   top: 0;
@@ -942,194 +1049,21 @@ hr.dashed {
 }
 
 /*************************************************************
-/* グリッドデザイン手動リセット関連
+グリッドデザイン手動リセット関連
+0 ～ 30px まで
 *************************************************************/
-.col-reset {
+
+.col-reset-0 {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
-.col-reset10 {
-  padding-left: 10px !important;
-  padding-right: 10px !important;
+@for $i from 1 through 6 {
+  .col-reset-#{$i * 5} {
+    padding-left: #{$i * 5}px !important;
+    padding-right: #{$i * 5}px !important;
+  }
 }
-
-.col-reset15 {
-  padding-left: 15px !important;
-  padding-right: 15px !important;
-}
-
-.col-reset20 {
-  padding-left: 20px !important;
-  padding-right: 20px !important;
-}
-
-.boot-pd20 {
-  padding-left: 20px !important;
-  padding-right: 20px !important;
-}
-
-.boot-pd15 {
-  padding-left: 15px !important;
-  padding-right: 15px !important;
-}
-
-.boot-pd10 {
-  padding-left: 10px !important;
-  padding-right: 10px !important;
-}
-
-.boot-pd0 {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-/*************************************************************
-【marginの設定】!importantあり
-*************************************************************/
-.m0{margin:0 !important}			/* margin 0px を指定するクラス */
-.mt0{margin-top:0 !important}		/* margin-top0px を指定するクラス */
-.mr0{margin-right:0 !important}		/* margin-right0px を指定するクラス*/
-.mb0{margin-bottom:0 !important}	/* margin-bottom0px を指定するクラス*/
-.ml0{margin-left:0 !important}		/* margin-left0px を指定するクラス*/
-
-.m5{margin:5px !important}
-.mt5{margin-top:5px !important}
-.mr5{margin-right:5px !important}
-.mb5{margin-bottom:5px !important}
-.ml5{margin-left:5px !important}
-
-.m10{margin:10px !important}
-.mt10{margin-top:10px !important}
-.mr10{margin-right:10px !important}
-.mb10{margin-bottom:10px !important}
-.ml10{margin-left:10px !important}
-
-.m15{margin:15px !important}
-.mt15{margin-top:15px !important}
-.mr15{margin-right:15px !important}
-.mb15{margin-bottom:15px !important}
-.ml15{margin-left:15px !important}
-
-.m20{margin:20px !important}
-.mt20{margin-top:20px !important}
-.mr20{margin-right:20px !important}
-.mb20{margin-bottom:20px !important}
-.ml20{margin-left:20px !important}
-
-.m25{margin:25px !important}
-.mt25{margin-top:25px !important}
-.mr25{margin-right:25px !important}
-.mb25{margin-bottom:25px !important}
-.ml25{margin-left:25px !important}
-
-.m30{margin:30px !important}
-.mt30{margin-top:30px !important}
-.mr30{margin-right:30px !important}
-.mb30{margin-bottom:30px !important}
-.ml30{margin-left:30px !important}
-
-.m35{margin:35px !important}
-.mt35{margin-top:35px !important}
-.mr35{margin-right:35px !important}
-.mb35{margin-bottom:35px !important}
-.ml35{margin-left:35px !important}
-
-.m40{margin:40px !important}
-.mt40{margin-top:40px !important}
-.mr40{margin-right:40px !important}
-.mb40{margin-bottom:40px !important}
-.ml40{margin-left:40px !important}
-
-.m45{margin:45px !important}
-.mt45{margin-top:45px !important}
-.mr45{margin-right:45px !important}
-.mb45{margin-bottom:45px !important}
-.ml45{margin-left:45px !important}
-
-.m50{margin:50px !important}
-.mt50{margin-top:50px !important}
-.mr50{margin-right:50px !important}
-.mb50{margin-bottom:50px !important}
-.ml50{margin-left:50px !important}
-
-.m55{margin:55px !important}
-.mt55{margin-top:55px !important}
-.mr55{margin-right:55px !important}
-.mb55{margin-bottom:55px !important}
-
-.ml55{margin-left:55px !important}
-.m60{margin:60px !important}
-.mt60{margin-top:60px !important}
-.mr60{margin-right:60px !important}
-.mb60{margin-bottom:60px !important}
-.ml60{margin-left:60px !important}
-
-.m65{margin:65px !important}
-.mt65{margin-top:65px !important}
-.mr65{margin-right:65px !important}
-.mb65{margin-bottom:65px !important}
-.ml65{margin-left:65px !important}
-
-.m70{margin:70px !important}
-.mr70{margin-right:70px !important}
-.mb70{margin-bottom:70px !important}
-.ml70{margin-left:70px !important}
-
-.m75{margin:75px !important}
-.mt75{margin-top:75px !important}
-.mr75{margin-right:75px !important}
-.mb75{margin-bottom:75px !important}
-.ml75{margin-left:75px !important}
-
-.m80{margin:80px !important}
-.mt80{margin-top:80px !important}
-.mr80{margin-right:80px !important}
-.mb80{margin-bottom:80px !important}
-.ml80{margin-left:80px !important}
-
-/**************************************************************
-【paddingの設定】
-**************************************************************/
-.p0{padding:0 !important}			/* padding-0px を指定するクラス */
-.pt0{padding-top:0 !important}		/* padding-top0px を指定するクラス */
-.pr0{padding-right:0 !important}	/* padding-right0px を指定するクラス */
-.pb0{padding-bottom:0 !important}	/* padding-bottom0px を指定するクラス */
-.pl0{padding-left:0 !important}		/* padding-left0px を指定するクラス */
-
-.p5{padding:5px !important}
-.pt5{padding-top:5px !important}
-.pr5{padding-right:5px !important}
-.pb5{padding-bottom:5px !important}
-.pl5{padding-left:5px !important}
-
-.p10{padding:10px !important}
-.pt10{padding-top:10px !important}
-.pr10{padding-right:10px !important}
-.pb10{padding-bottom:10px !important}
-.pl10{padding-left:10px !important}
-
-.p15{padding:15px !important}
-.pt15{padding-top:15px !important}
-.pr15{padding-right:15px !important}
-.pb15{padding-bottom:15px !important}
-.pl15{padding-left:15px !important}
-
-.p20{padding:20px !important}
-.pr20{padding-right:20px !important}
-.pl20{padding-left:20px !important}
-
-.p70{padding:70px !important}
-.pr70{padding-right:70px !important}
-.pl70{padding-left:70px !important}
-
-/**************************************************************
- Landing page Width設定
-**************************************************************/
-.lpmw           { max-width: 960px !important; }
-.lpmw-800       { width: 800px !important; }
-.lpmw-940       { width: 940px !important; }
-.lpmw-960       { width: 960px !important; }
 
 /**************************************************************
 　デコレーション関連
@@ -1151,70 +1085,18 @@ hr.dashed {
   【画像サイズ関係】
   **************************************************************/
 
-  /* 25%画像 */
-  .img-responsive-25  {
-    display: block;
-    height: auto;
-    width: 25%;
+  @for $i from 1 through 20 {
+    .img-responsive-#{$i * 5} {
+      display: block;
+      height: auto;
+      width: percentage(($i * 5)/100);
+    }
   }
-  /* 27%画像 */
-  .img-responsive-27  {
-    display: block;
-    height: auto;
-    max-width: 27%;
-  }
-  /* 30%画像 */
-  .img-responsive-30  {
-    display: block;
-    height: auto;
-    max-width: 30%;
-  }
-  /* 50%画像 */
-  .img-responsive-50  {
-    display: block;
-    height: auto;
-    width: 50%;
-  }
-  /* 75%画像 */
-  .img-responsive-75  {
-    display: block;
-    height: auto;
-    width: 75%;
-  }
-
-  /* 80%画像 */
-  .img-responsive-80  {
-    display: block;
-    height: auto;
-    width: 80%;
-  }
-
-  /* 90%画像 */
-  .img-responsive-90  {
-    display: block;
-    height: auto;
-    width: 90%;
-  }
-
-  .md-cwd5 { width: 5%; }
-  .md-cwd10 { width: 10%; }
-  .md-cwd20 { width: 20%; }
-  .md-cwd30 { width: 30%; }
-  .md-cwd40 { width: 40%; }
-  .md-cwd50 { width: 50%; }
-  .md-cwd60 { width: 60%; }
-
-  .md-pl5 { padding-left: 5px !important;}
-  .md-pdb10 { padding-bottom: 10px !important; }
-
-  /* md margin 系*/
-  .md-mt8 { margin-top: 8px; }
-  .md-mt10 { margin-top: 10px; }
 
   /* フォントサイズ */
   //font-size
   @for $i from 1 through 100 {
-    .md-fs#{$i} {
+    .md-fs-#{$i} {
       font-size: #{$i}px !important;
     }
   }
@@ -1228,11 +1110,6 @@ hr.dashed {
       max-width: #{$i * 5}px;
     }
   }
-
-  .md-w11 { width: 11px; }
-  .md-w12 { width: 12px; }
-  .md-w13 { width: 13px; }
-  .md-w14 { width: 14px; }
 
 }
 
@@ -1253,49 +1130,13 @@ hr.dashed {
   /**************************************************************
   【画像サイズ関係】
   **************************************************************/
-  /* 50%画像 */
-  .img-responsive-50  {
-    display: block;
-    height: auto;
-    max-width: 50%;
-  }
-  /* 30%画像 */
-  .img-responsive-30  {
-    display: block;
-    height: auto;
-    max-width: 30%;
-  }
-  /* 25%画像 */
-  .img-responsive-25  {
-    display: block;
-    height: auto;
-    max-width: 25%;
-  }
-  /* 27%画像 */
-  .img-responsive-27  {
-    display: block;
-    height: auto;
-    max-width: 27%;
-  }
-  /* 75%画像 */
-  .img-responsive-75  {
-    display: block;
-    height: auto;
-    max-width: 75%;
-  }
-
-  /* 80%画像 */
-  .img-responsive-80  {
-    display: block;
-    height: auto;
-    width: 80%;
-  }
-
-  /* 90%画像 */
-  .img-responsive-90  {
-    display: block;
-    height: auto;
-    width: 90%;
+  // img-responsive-10
+  @for $i from 1 through 20 {
+    .img-responsive-#{$i * 5} {
+      display: block;
+      height: auto;
+      width: percentage(($i * 5)/100);
+    }
   }
 
   /* SP img block */
@@ -1308,9 +1149,6 @@ hr.dashed {
   .sp-clear { clear: both; }
   .sp-text-center { text-align: center !important; }
 
-  .sp-ht20 { height: 20px !important;}
-  .sp-ht50 { height: 50px !important;}
-
   .sp-fwb { font-weight: bold !important; }
   .sp-fwb500 { font-weight: 500 !important;}
 
@@ -1321,125 +1159,7 @@ hr.dashed {
   .sp-text-middle { font-weight: 600 !important; }
   .sp-img-center  { margin: 0 auto !important; }
 
-  /* sp margin 系*/
-  .sp-mg0 { margin: 0 !important; }
-  .sp-pd0 { padding: 0 !important; }
-
-  .sp-pdr0 { padding-right: 0 !important; }
-  .sp-pdr10 { padding-right: 10px !important; }
-  .sp-pdr20 { padding-right: 20px !important; }
-
-  .sp-pdl0 { padding-left: 0 !important; }
-  .sp-pdl10 { padding-left: 10px !important; }
-  .sp-pdl20 { padding-left: 20px !important; }
-
-  .sp-pdb0 { padding-bottom: 0 !important; }
-  .sp-pdb3 { padding-bottom: 3px !important; }
-  .sp-pdb10 { padding-bottom: 10px !important; }
-  .sp-pdb20 { padding-bottom: 20px !important; }
-
-  .sp-pdt10 { padding-top: 10px !important; }
-  .sp-pdt15 { padding-top: 15px !important; }
-  .sp-pdt20 { padding-top: 20px !important; }
-  .sp-pdt25 { padding-top: 25px !important; }
-  .sp-pdt30 { padding-top: 30px !important; }
-  .sp-pdt35 { padding-top: 35px !important; }
-
-  /**************************************************************
-  【paddingの設定】
-  **************************************************************/
-
-  /* margin */
-  //margin-size
-  @for $i from 0 through 100 {
-    .sp-mg#{$i} {
-      margin: #{$i}px !important;
-    }
-    .sp-mgl#{$i} {
-      margin-left: #{$i}px !important;
-    }
-    .sp-mgt#{$i} {
-      margin-top: #{$i}px !important;
-    }
-    .sp-mgb#{$i} {
-      margin-bottom: #{$i}px !important;
-    }
-    .sp-mgr#{$i} {
-      margin-right: #{$i}px !important;
-    }
-    .sp-p#{$i} {
-      padding: #{$i}px !important;
-    }
-    .sp-pt#{$i} {
-      padding-top: #{$i}px !important;
-    }
-    .sp-pl#{$i} {
-      padding-left: #{$i}px !important;
-    }
-    .sp-pb#{$i} {
-      padding-bottom: #{$i}px !important;
-    }
-    .sp-pr#{$i} {
-      padding-right: #{$i}px !important;
-    }
-  }
-
-  /* フォントサイズ */
-  //font-size
-  @for $i from 1 through 100 {
-    .sp-fs#{$i} {
-      font-size: #{$i}px !important;
-    }
-  }
-
-  .sp-lh13 { line-height: 1.3em !important;}
-  .sp-lh15 { line-height: 1.5em !important;}
-  .sp-lh16 { line-height: 1.6em !important;}
-  .sp-lh18 { line-height: 1.8em !important;}
-  .sp-lh20 { line-height: 2.0em !important;}
-
-  .sp-wd100 { width: 100% !important; }
-
   .sp-dsn { display: none !important;}
   .sp-dsp { display: block !important; }
 
-  /*************************************************************
-     sp-line-height
-  *************************************************************/
-
-  .sp-lh10 { line-height: 10px; }
-  .sp-lh11 { line-height: 11px; }
-  .sp-lh12 { line-height: 12px; }
-  .sp-lh13 { line-height: 13px; }
-  .sp-lh14 { line-height: 14px; }
-  .sp-lh15 { line-height: 15px; }
-  .sp-lh16 { line-height: 16px; }
-  .sp-lh17 { line-height: 17px; }
-  .sp-lh18 { line-height: 18px; }
-  .sp-lh19 { line-height: 19px; }
-  .sp-lh20 { line-height: 20px; }
-  .sp-lh21 { line-height: 21px; }
-  .sp-lh22 { line-height: 22px; }
-  .sp-lh23 { line-height: 23px; }
-  .sp-lh24 { line-height: 24px; }
-  .sp-lh25 { line-height: 25px; }
-  .sp-lh26 { line-height: 26px; }
-  .sp-lh27 { line-height: 27px; }
-  .sp-lh28 { line-height: 28px; }
-  .sp-lh29 { line-height: 29px; }
-  .sp-lh30 { line-height: 30px; }
-  .sp-lh31 { line-height: 31px; }
-  .sp-lh32 { line-height: 32px; }
-  .sp-lh33 { line-height: 33px; }
-  .sp-lh34 { line-height: 34px; }
-  .sp-lh35 { line-height: 35px; }
-  .sp-lh36 { line-height: 36px; }
-  .sp-lh37 { line-height: 37px; }
-  .sp-lh38 { line-height: 38px; }
-  .sp-lh39 { line-height: 39px; }
-  .sp-lh40 { line-height: 40px; }
-
-  /**************************************************************
-    レスポンシブ スマホ対応
-  **************************************************************/
 }

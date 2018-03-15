@@ -8,6 +8,12 @@
  *******************************************/
 @import "color";
 
+//-------------------- Base Colors --------------------//
+
+$theme-color:                   #004386;
+$body-color:                    #555;
+$heading-color:                 #444;
+
 //-------------------- Line Height Variables --------------------//
 
 $line-height-base:              1.5;
@@ -48,9 +54,8 @@ $danger:  						#A94442;
 $postcontent:                   74%;
 $postcontent-margin:            4%;
 
-/* $sidebar:                       100% - ($postcontent + $postcontent-margin);
-/* $bothsidebar:                   100% - ( ( $sidebar * 2 ) + ( $postcontent-margin * 2 ) );
-*/
+$sidebar:                       100% - ($postcontent + $postcontent-margin);
+$bothsidebar:                   100% - ( ( $sidebar * 2 ) + ( $postcontent-margin * 2 ) );
 
 $section-padding:				60px;
 $section-margin:				60px;
@@ -60,7 +65,7 @@ $section-bg:					#F9F9F9;
 // Top Bar
 
 $topbar-height:                 45px;
-/* $topbar-line-height:            ($topbar-height - 1); */
+$topbar-line-height:            ($topbar-height - 1);
 
 //-------------------- Header --------------------//
 
@@ -175,6 +180,84 @@ $blog-3-margin-sb:         				25px;
 $blog-2-margin-bs:         				40px;
 
 
+//-------------------- Social Icons Colors --------------------//
+
+$facebook:                 #3B5998;
+$delicious:                #205CC0;
+$paypal:                   #00588B;
+$flattr:                   #F67C1A;
+$android:                  #A4C639;
+$smashmag:                 #E53B2C;
+$gplus:                    #DD4B39;
+$wikipedia:                #333;
+$stumbleupon:              #F74425;
+$foursquare:               #25A0CA;
+$call:                     #444;
+$ninetyninedesigns:        #F26739;
+$forrst:                   #5B9A68;
+$digg:                     #191919;
+$spotify:                  #81B71A;
+$reddit:                   #C6C6C6;
+$blogger:                  #FC4F08;
+$cc:                       #688527;
+$dribbble:                 #EA4C89;
+$evernote:                 #5BA525;
+$flickr:                   #FF0084;
+$google:                   #DD4B39;
+$instapaper:               #333;
+$klout:                    #FF5F52;
+$linkedin:                 #0E76A8;
+$vk:                       #2B587A;
+$rss:                      #EE802F;
+$skype:                    #00AFF0;
+$twitter:                  #00ACEE;
+$youtube:                  #C4302B;
+$vimeo:                    #86C9EF;
+$aim:                      #FCD20B;
+$yahoo:                    #720E9E;
+$email3:                   #6567A5;
+$macstore:                 #333333;
+$myspace:                  #666666;
+$podcast:                  #E4B21B;
+$cloudapp:                 #525557;
+$dropbox:                  #3D9AE8;
+$ebay:                     #89C507;
+$github:                   #171515;
+$googleplay:               #DD4B39;
+$itunes:                   #222;
+$plurk:                    #CF5A00;
+$pinboard:                 #0000E6;
+$soundcloud:               #FF7700;
+$tumblr:                   #34526F;
+$wordpress:                #1E8CBE;
+$yelp:                     #C41200;
+$intensedebate:            #009EE4;
+$eventbrite:               #F16924;
+$scribd:                   #666666;
+$stripe:                   #008CDD;
+$print:                    #111;
+$dwolla:                   #FF5C03;
+$statusnet:                #131A30;
+$acrobat:                  #D3222A;
+$drupal:                   #27537A;
+$buffer:                   #333333;
+$pocket:                   #EE4056;
+$bitbucket:                #0E4984;
+$stackoverflow:            #EF8236;
+$hackernews:               #FF6600;
+$xing:                     #126567;
+$instagram:                #3F729B;
+$quora:                    #A82400;
+$openid:                   #E16309;
+$steam:                    #111;
+$amazon:                   #E47911;
+$disqus:                   #E4E7EE;
+$plancast:                 #222;
+$appstore:                 #000;
+$pinterest:                #C8232C;
+$fivehundredpx:            #111;
+$si_text_color:            #FFF;
+
 /*******************************************
  media
  *******************************************/
@@ -183,6 +266,9 @@ $g-sm: 576px !default; // Small devices (landscape phones, >=576 & <=767)
 $g-md: 768px !default; // Medium devices (tablets, >=768 & <=991) smart-phone
 $g-lg: 992px !default; // Large devices (desktops, >=992 & <=1199) tablet
 $g-xl: 1200px !default; // Extra large devices (large desktops, >=1200)
+
+//sp定義
+$sp:  "only screen and (max-width: 768px)" !default;
 
 /*******************************************
  TYPOGRAPHY

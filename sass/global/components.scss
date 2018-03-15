@@ -29,16 +29,34 @@ SmartPhone(767px以下) => スマートフォン全般
 * include Web Component CSS
 ***********************/
 @import "components/btn";       /* btn */
+@import "components/buttons";       /* buttons */
 @import "components/lists";     /* lists */
 @import "components/tabs";      /* tabs */
 @import "components/elements";  /* elements */
 @import "components/collapse";   /* toggles */
 @import "components/ribbon";   /* ribbon */
 @import "components/thumb-info";   /* ribbon */
+@import "components/btn";       /* btn */
 
+@import "components/feature-box";       /* feature-box */
+@import "components/team";       /* team */
+
+@import "components/alerts";       /* feature-box */
+@import "components/carousel";       /* team */
+@import "components/clients";       /* feature-box */
+
+@import "components/promo";              /* promo */
+@import "components/toggles-accordions"; /* toggles */
+@import "components/youtubebg";          /* youtubebg */
+
+/**********************
+* icons Web Component CSS
+***********************/
+@import "components/font-icons"; /* font-icon */
+@import "components/social-icons"; /* font-icon */
+@import "components/styled-icons"; /* font-icon */
 
 /**********************
 * include Object CSS
 ***********************/
-@import "components/typography"; /* font */
-@import "components/oocss"; /* oocss */
+@import "components/headings"; /* font */
