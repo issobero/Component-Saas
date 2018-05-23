@@ -4,6 +4,19 @@
 * Global layout
 *************************************************************/
 
+.highlight { background-color: $color-yellow; }
+
+// reset
+ul, menu, dir {
+  display: block;
+  list-style-type: disc;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  -webkit-padding-start: 0;
+}
+
 //section layout
 section {
   @media only screen and (max-width: 992px) {
@@ -64,30 +77,104 @@ audio {
 * Horizontal break
 *************************************************************/
 
-hr {
+hr{
   background-image: linear-gradient(to right, transparent, #ffffff, transparent);
   border: 0 none;
   height: 1px;
   margin: 20px;
+  &.sm {
+    margin: 10px 0;
+  }
+  &.short {
+    margin: 10px 0;
+  }
+  &.tall {
+    margin: 20px 0;
+  }
+  &.taller {
+    margin: 40px 0;
+  }
+  &.solid {
+    border-top: 1px solid #dbdbdb;
+  }
+  &.light {
+    background-image: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.15), transparent);
+  }
+  &.dashed {
+    border-top: 1px dashed #dbdbdb;
+  }
 }
 
-hr.short {
-  margin: 10px 0;
+@each $name, $colors in $component-colors {
+  hr.solid-#{$name} {
+    border-top: 1px solid map-get($colors, base);
+  }
+  hr.dashed-#{$name} {
+    border-top: 1px dashed map-get($colors, base);
+  }
 }
-hr.tall {
-  margin: 20px 0;
+
+/************************************************************
+ * tables
+ ************************************************************/
+
+@each $name, $colors in $component-colors {
+  .table-bordered-#{$name} {
+    th {
+      background: #f2f2f2;
+      font-weight: bold;
+      text-align: center;
+      border: 1px solid map-get($colors, base);
+    }
+    td {
+      border: 1px solid map-get($colors, base);
+      vertical-align: middle;
+    }
+    tr {
+      border-bottom: 1px solid map-get($colors, base);
+    }
+  }
 }
-hr.taller {
-  margin: 40px 0;
+
+.table-sm {
+  td {
+    padding: 10px;
+    font-size: 12px;
+  }
+  th {
+    padding: 10px;
+    font-size: 12px;
+  }
 }
-hr.solid {
-  background: #dbdbdb none repeat scroll 0 0;
-}
-hr.light {
-  background-image: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.15), transparent);
-}
-hr.dashed {
-  border-top: 1px dashed #dbdbdb;
+
+
+/************************************************************
+ * pagenation kaminari デザイン
+ ************************************************************/
+
+@each $name, $colors in $component-colors {
+  .page-link-#{$name} {
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: map-get($colors, base);
+    background-color: map-get($colors, font);
+    border: 1px solid map-get($colors, base);
+    // hover
+    &:hover {
+      color: map-get($colors, base);
+      text-decoration: none;
+      background-color: #e9ecef;
+      border-color: map-get($colors, base);
+    }
+  }
+  .page-item.active .page-link-#{$name} {
+    color: map-get($colors, font);
+    background-color: map-get($colors, base);
+    border-color: map-get($colors, base);
+  }
 }
 
 
@@ -107,6 +194,37 @@ hr.dashed {
 /**************************************************************
  * box
 **************************************************************/
+
+.box {
+  padding: 10px;
+  &.box-radius-1 {
+    border-radius: 1px;
+  }
+  &.box-radius-2 {
+    border-radius: 2px;
+  }
+  &.box-radius-3 {
+    border-radius: 3px;
+  }
+  &.box-radius-4 {
+    border-radius: 4px;
+  }
+  &.box-radius-5 {
+    border-radius: 5px;
+  }
+  &.box-radius-6 {
+    border-radius: 6px;
+  }
+}
+
+@each $name, $colors in $component-colors {
+  .box.box-#{$name} {
+    border: 1px solid map-get($colors, base);
+  }
+  .box.box-bg-#{$name} {
+    background-color: map-get($colors, base);
+  }
+}
 
 .admin-portlet-box {
   padding: 12px 20px 15px;
@@ -213,6 +331,13 @@ hr.dashed {
   box-shadow: 0 1px 5px 0 #dde5ee;
 }
 
+.wiki-box {
+  margin: 10px 10px 10px 20px;
+  padding: 10px 10px 10px 10px;
+  font-size: 90%;
+  background-color: #efffff;
+  border: solid 1px #999;
+}
 
 /*------------------------------------
   Box-shadows Styles
@@ -257,31 +382,31 @@ hr.dashed {
     box-shadow: 0 0 5px $g-color-gray-light-v3;
   }
   &-4 {
-    box-shadow: 0 0 5px rgba($g-color-black, .1);
+    box-shadow: 0 0 5px rgba($color-black, .1);
   }
   &-5 {
-    box-shadow: 0 0 20px rgba($g-color-black, .2);
+    box-shadow: 0 0 20px rgba($color-black, .2);
 
     &--hover:hover {
-      box-shadow: 0 0 20px rgba($g-color-black, .2);
+      box-shadow: 0 0 20px rgba($color-black, .2);
     }
 
     &--hover-parent {
       *:hover > & {
-        box-shadow: 0 0 20px rgba($g-color-black, .2);
+        box-shadow: 0 0 20px rgba($color-black, .2);
       }
     }
   }
   &-6 {
-    box-shadow: 0 0 10px rgba($g-color-black, .2);
+    box-shadow: 0 0 10px rgba($color-black, .2);
 
     &--hover:hover {
-      box-shadow: 0 0 10px rgba($g-color-black, .2);
+      box-shadow: 0 0 10px rgba($color-black, .2);
     }
 
     &--hover-parent {
       *:hover > & {
-        box-shadow: 0 0 10px rgba($g-color-black, .2);
+        box-shadow: 0 0 10px rgba($color-black, .2);
       }
     }
   }
@@ -305,7 +430,7 @@ hr.dashed {
   Box-shadows-v2
 ------------------------------------*/
 .u-shadow-v2 {
-  box-shadow: 0 10px 6px -6px rgba($g-color-black, .2);
+  box-shadow: 0 10px 6px -6px rgba($color-black, .2);
 }
 
 /*------------------------------------
@@ -322,7 +447,7 @@ hr.dashed {
   bottom: 15px;
   width: 50%;
   max-width: 300px;
-  background: rgba($g-color-black, .2);
+  background: rgba($color-black, .2);
   z-index: -1;
 }
 .u-shadow-v3,
@@ -335,7 +460,7 @@ hr.dashed {
 .u-shadow-v4::before,
 .u-shadow-v5::after {
   @extend %box-shadow--after-before;
-  box-shadow: 0 15px 10px rgba($g-color-black, .2);
+  box-shadow: 0 15px 10px rgba($color-black, .2);
   transform: rotate(-3deg);
 }
 .u-shadow-v3::after,
@@ -368,28 +493,28 @@ hr.dashed {
 }
 
 .dark-box-1 {
-  color: #FFFFFF;
+  color: $color-white;
   width: 100%;
   padding: 10px 20px;
   background-color: rgba(000,0,0,0.9);
 }
 
 .dark-box-2 {
-  color: #FFFFFF;
+  color: $color-white;
   width: 100%;
   padding: 10px 20px;
   background-color: rgba(000,0,0,0.8);
 }
 
 .dark-box-3 {
-  color: #FFFFFF;
+  color: $color-white;
   width: 100%;
   padding: 10px 20px;
   background-color: rgba(000,0,0,0.7);
 }
 
 .dark-box-4 {
-  color: #FFFFFF;
+  color: $color-white;
   width: 100%;
   padding: 10px 20px;
   background-color: rgba(000,0,0,0.6);
@@ -409,7 +534,7 @@ hr.dashed {
 .h-title-1 {
   padding: 10px;
   line-height: 1.4;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   background: #263238;
   color: #fff;
@@ -481,10 +606,10 @@ hr.dashed {
 ************************************************************/
 
 /* text-decoration */
-.tdu { text-decoration: underline; } /* アンダーライン */
-.tdb { text-decoration: blink; }
-.tdo { text-decoration: overline; }
-.tdl { text-decoration: line-through; }
+.td-u { text-decoration: underline; } /* アンダーライン */
+.td-b { text-decoration: blink; }
+.td-o { text-decoration: overline; }
+.td-l { text-decoration: line-through; }
 
 /************************************************************
 * vertical-align
@@ -674,6 +799,14 @@ hr.dashed {
   }
 }
 
+@for $i from 1 through 1000 {
+  .min-ht-#{$i} {
+    min-height: #{$i}px;
+  }
+  .min-ht-#{$i}-i {
+    height: #{$i}px !important;
+  }
+}
 
 /************************************************************
  * bootstrap padding
@@ -898,78 +1031,41 @@ hr.dashed {
 /* border: 関連 map-get方式
 *************************************************************/
 
+/* text pick up: default
+padding: 0 8px;
+solid: 4px
+*/
 
-.b-gray { border: 1px solid $color-grey; }
-.b-gray-1 { border: 1px solid $color-grey-1; }
-
-.bb-sol-green { border-bottom: 2px solid $color-green; }
-.bb-sol-pastel-green { border-bottom: 1px solid #0aa699 !important; }
-
-.bb-g { border-bottom: 2px solid #b7bbbf; }
-.bb-sol-blue { border-bottom: 1px solid $color-blue; }
-.bb-dot-blue { border-bottom: 1px solid $color-blue; }
-
-.b-sol  { border:solid 1px #ccc; }
-.b-sol-black { border:solid 1px #5A5A5A;}
-
-.bt-sol { border-top:solid 1px #ccc; }
-.bb-sol { border-bottom:solid 1px #ccc; }
-.bl-sol { border-left:solid 1px #ccc; }
-.br-sol { border-right:solid 1px #ccc; }
-
-.br-sol-ddd { border-right:solid 1px #ddd; }
-
-.bt-sol-black { border-top:solid 1px #5A5A5A; }
-.bb-sol-black { border-bottom:solid 1px #5A5A5A; }
-.bl-sol-black { border-left:solid 1px #5A5A5A; }
-.br-sol-black { border-right:solid 1px #5A5A5A; }
-
-.bb-sol-dadada { border-bottom: 1px #DADADA;}
+@each $name, $colors in $component-colors {
+  //pickup
+  .bl-sol-pickup-#{$name} {
+    border-left: 4px solid map-get($colors, base);
+    padding: 0 8px;
+  }
+  .bl-sol-pickup-lg-#{$name} {
+    border-left: 4px solid map-get($colors, base);
+    padding: 4px 8px;
+  }
+  .bt-sol-#{$name} {
+    border-top: 4px solid map-get($colors, base);
+  }
+  .bb-sol-#{$name} {
+    border-bottom: 4px solid map-get($colors, base);
+  }
+  .br-sol-#{$name} {
+    border-right: 4px solid map-get($colors, base);
+  }
+}
 
 .bt-dot { border-top:dotted 1px #ccc; }
 .bb-dot { border-bottom:dotted 1px #ccc; }
 .bl-dot { border-left: dotted 1px #ccc; }
 .br-dot { border-right:dotted 1px #ccc; }
 
-.bt-sol-pastel-red { border-top: 4px solid #f35958;}
-.bt-sol-pastel-blue { border-top: 4px solid #0090d9; }
-.bt-sol-pastel-purple { border-top: 4px solid #735f87; }
-.bt-sol-pastel-green { border-top: 4px solid #0aa699; }
-
-/* text pick up: 4px 8px; */
-.bl-sol-pick {
-  border-left: 3px solid $theme-color;
-  padding: 4px 8px;
-}
-
-.bl-sol-pick-666 {
-  border-left: 3px solid #666;
-  padding: 4px 8px;
-}
-
-.bl-sol-pastel-green  {
-  border-left: 3px solid #0aa699;
-  padding: 4px 8px;
-}
-
-.bl-sol-pick-green {
-  border-left: 3px solid $color-green;
-  padding: 4px 8px;
-}
-
-.bl-sol-pick-blue {
-  border-left: 3px solid $color-blue;
-  padding: 4px 8px;
-}
-
-.bl-sol-pick-red {
-  border-left: 3px solid $color-red;
-  padding: 4px 8px;
-}
 
 /* border radius */
 @for $i from 1 through 100  {
-  .bdr#{$i} {
+  .bdr-#{$i} {
     border-radius: #{$i}px;
   }
 }
@@ -991,7 +1087,10 @@ hr.dashed {
   text-align: center !important;
 }
 
-.img-center { display: block;margin: 0 auto; }
+.img-center {
+  display: block;
+  margin: 0 auto;
+}
 .img-wide { width: 100%;height: auto; }
 
 .ofh { overflow:hidden; }
@@ -1012,16 +1111,16 @@ hr.dashed {
 
 // important設定
 @for $i from 1 through 250  {
-  .top#{$i} {
+  .top-#{$i} {
     top: #{$i}px !important;
   }
-  .bottom#{$i} {
+  .bottom-#{$i} {
     bottom: #{$i}px !important;
   }
-  .left#{$i} {
+  .left-#{$i} {
     left: #{$i}px !important;
   }
-  .right#{$i} {
+  .right-#{$i} {
     right: #{$i}px !important;
   }
 }
@@ -1031,12 +1130,12 @@ hr.dashed {
 *************************************************************/
 .youtube {
   position: relative;
-  margin-top: 0.2em;
-  margin-bottom: 1.2em;
-  padding-top: 69px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
   padding-left: 15px;
   padding-right: 15px;
-  padding-bottom: 50%;
+  padding-bottom: 10px;
   overflow: hidden;
 }
 

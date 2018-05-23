@@ -603,7 +603,7 @@ body:not(.device-touch) .entry-link { @include transition(background-color .3s e
 .mpost {
 	margin-top: 20px;
 	padding-top: 20px;
-	border-top: 1px dashed #E5E5E5;
+	border-top: 1px dashed $theme-color;
 }
 
 .mpost {
@@ -1056,4 +1056,8 @@ p {
 .wp-smiley {
 	max-height: 13px;
 	margin: 0 !important;
+}
+
+.entry-meta li {
+	color: $theme-color;
 }

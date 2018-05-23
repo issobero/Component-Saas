@@ -118,6 +118,7 @@
   top: -5px;
 }
 
+/*
 .badge {
   text-shadow: none;
   font-weight: 600;
@@ -128,10 +129,29 @@
   padding-bottom: 4px;
   color: #5E5E5E;
 }
+*/
+
+/***
+Customized Bootstrap badge
+***/
+
+@each $name, $colors in $component-colors {
+  .badge-#{$name} {
+    color: (map-get($colors, font));
+    background-color: (map-get($colors, base));
+  }
+}
 
 /***
 Customized Bootstrap Labels
 ***/
+
+/* Labels variants */
+@each $name, $colors in $component-colors {
+  .label-#{$name} {
+    @include label-variant(map-get($colors, base));
+  }
+}
 
 .label {
   display: inline;
@@ -160,19 +180,12 @@ Customized Bootstrap Labels
   }
 }
 
-/* Labels variants */
-@each $name, $colors in $component-colors {
-  .label-#{$name} {
-    @include label-variant(map-get($colors, base));
-  }
-}
-
 /***
 Iconic labels
 ***/
 
 .label.label-icon {
-  padding: 4px 0px 4px 4px;
+  padding: 4px 0 4px 4px;
   margin-right: 2px;
   text-align: center !important;
 

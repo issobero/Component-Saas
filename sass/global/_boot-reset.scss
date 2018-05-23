@@ -16,3 +16,16 @@ Bootstrap4 対応
   padding-right: $bootstrap-reset-row-right;
   padding-left: $bootstrap-reset-row-left;
 }
+
+/* container reset */
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* table reset */
+.table thead th {
+  border-bottom: none;
+}

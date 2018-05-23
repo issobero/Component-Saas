@@ -15,10 +15,14 @@ $color-base: #8b91a0;
 $main-color: #16834c;
 
 // Color Black
-$g-color-black: #000;
+$color-black: #000;
 
 // Color White
-$g-color-white: #fff;
+$color-white: #fff;
+
+//general-color
+$color-ccc: #ccc;
+$color-ddd: #ddd;
 
 // Color Gray
 $g-color-gray-light-v1: #bbb !default; // $g-color-gray-light-v3
@@ -38,9 +42,9 @@ $color-grey: #8b91a0;
 $color-grey-1: #DDDDDD;
 
 //base color
-$color-red: #f35958;
+$color-red: #832216;
 $color-red-1: #F5A3A2;
-$color-blue: #37b0e9;
+$color-blue: #004386;
 $color-blue-1: #7FCAED;
 $color-yellow: #f7cf5e;
 $color-yellow-1: #F8E4A9;
@@ -61,8 +65,6 @@ $color-dark-5: lighten($color-dark, 3%);
 $color-darken-1: darken($color-dark, 2%);
 $color-side-dark: #424242 !default;
 
-$color-white: #FFFFFF !default;
-$color-black: #000000 !default;
 $color-black-1: #111111 !default;
 $color-black-2: #222222 !default;
 $color-black-3: #333333 !default;
@@ -83,6 +85,8 @@ $color-aqua: #5ba5d6;
 $color-aqua-1: #A0C5DD;
 
 $color-pink: #e92f76;
+
+$color-ws: #004386;
 $color-blue-ws: #000154;
 
 $color-font-default: #777;
@@ -195,11 +199,17 @@ $si_text_color:            #FFF;
 $theme-type: default;
 $component-colors: (
   //default color
+    "theme":              (base:$theme-color, font: #FFFFFF),
     "base":               (base:$color-base, font: #FFFFFF),
     "main":               (base:$main-color, font: #FFFFFF),
     "default":	          (base:#e1e5ec, font: #666666),
     "white":	            (base:#ffffff, font: #333),
     "dark":    	          (base:#2f353b, font: #FFFFFF),
+  //general color
+    "ccc":                (base:$color-ccc, font: #333),
+    "ddd":                (base:$color-ddd, font: #333),
+    "d8d8d8":             (base:#d8d8d8, font: #333),
+    "d0d0d0":             (base:#d0d0d0, font: #333),
   //black
     "black":              (base:$color-black, font: #FFFFFF),
     "black-1":            (base:$color-black-1, font: #FFFFFF),
@@ -262,7 +272,7 @@ $component-colors: (
     "red-haze":	          (base:#f36a5a, font: #ffffff),
     "red-mint":	          (base:#e43a45, font: #ffffff),
   //yellow
-    "yellow":	            (base:$color-red, font: #ffffff),
+    "yellow":	            (base:$color-yellow, font: #ffffff),
     "yellow-gold":	      (base:#E87E04, font: #ffffff),
     "yellow-casablanca":	(base:#f2784b, font: #ffffff),
     "yellow-crusta":	    (base:#f3c200, font: #ffffff),

@@ -28,6 +28,9 @@ SmartPhone(767px以下) => スマートフォン全般
 /**********************
 * include Web Component CSS
 ***********************/
+
+@import "components/typography";
+
 @import "components/btn";       /* btn */
 @import "components/buttons";       /* buttons */
 @import "components/lists";     /* lists */

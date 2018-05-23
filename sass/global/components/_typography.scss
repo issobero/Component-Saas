@@ -32,31 +32,42 @@ body, button, input, select, optgroup, textarea {
 }
 
 /************************************************************
+ * pタグ
+ ************************************************************/
+
+p {
+  margin-bottom: 5px;
+}
+
+/************************************************************
  * hタグ
  ************************************************************/
 h1 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
+  margin-bottom: 10px;
   @media (max-width: 767px) {
     font-size: 16px;
   }
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
+  margin-bottom: 10px;
   @media (max-width: 767px) {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
-h3{
+h3 {
   font-size: 18px;
   font-weight: bold;
-  }
+  margin-bottom: 10px;
   @media (max-width: 767px) {
-    font-size: 16px;
+    font-size: 14px;
   }
+}
 
 .info-brl-red {
   border-left: 3px solid $color-red;
@@ -109,23 +120,23 @@ h3{
 /************************************************************
  * アンカータグ
  ************************************************************/
-a { color: $color-anchor; }
-a:hover { color: $color-anchor-hover; }
-
-/************************************************************
- * アンカータグ 画像の透明化
- ************************************************************/
-a img {
-  border: none;
-  text-decoration: none;
-  -webkit-transition: 0.2s ease-in-out;
-  -moz-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-}
-
-a img:hover {
-  opacity: 0.7;
-  filter: alpha(opacity=70);
+a {
+  color: $color-anchor;
+  &:hover {
+    color: $color-anchor-hover;
+  }
+  // 画像の透明化
+  img {
+    border: none;
+    text-decoration: none;
+    -webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+    &:hover {
+      opacity: 0.7;
+      filter: alpha(opacity=70);
+    }
+  }
 }
 
 /* Disabled Navigation Link */
